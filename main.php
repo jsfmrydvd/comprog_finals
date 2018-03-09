@@ -15,9 +15,8 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
   <link rel="stylesheet" type="text/css" href="css/animate.css">
   <!-- fontawesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
-  <!--sr  -->
-    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-
+  <!--sr script  -->
+  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
 </head>
   <body>
     <!-- Content of the the top -->
@@ -95,7 +94,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
       <li data-target="#carouselMain" data-slide-to="2"></li>
     </ol>
     <div class="carousel-inner">
-
+<!-- first carousel slide -->
       <div class="carousel-item active">
         <img class="d-block w-100" src="img/carousel-two.jpeg" alt="First slide">
         <div class="carousel-caption second text-center">
@@ -108,6 +107,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
           <a href="products.php" class="primary-product-button three">Shop All</a>
         </div>
       </div>
+      <!-- Second carousel slide -->
       <div class="carousel-item ">
         <img class="d-block w-100" src="img/carousel-1.jpg" alt="Second slide">
         <div class="carousel-caption one text-left">
@@ -121,6 +121,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
           <a href="products.php" class="primary-product-button">Shop Now</a>
         </div>
       </div>
+      <!-- third carousel slide -->
       <div class="carousel-item">
         <img class="d-block w-100" src="img/carousel-three.jpeg" alt="Third slide">
         <div class="carousel-caption third-one text-right">
@@ -136,7 +137,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
       </div>
     </div>
     <a class="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
-      <!-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> -->
       <i class="cursor-icons" style="display: none;">left key</i>
       <span class="sr-only">Previous</span>
     </a>
@@ -146,7 +146,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </a>
   </div>
 </div>
-<!-- collection -->
+<!-- collection of items under carousel -->
 <div id="collections">
   <div class="container-fluid" style="padding: 0;">
     <div class="row no-gutters">
@@ -156,7 +156,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
           <div class="text-holder text-center">
             <strong>summer 2017</strong>
             <h2>new summer trends</h2>
-            <a href="#" class="shop-btn">shopw now</a>
+            <a href="#" class="shop-btn">shop now</a>
           </div>
         </div>
       </div>
@@ -166,7 +166,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
           <div class="text-holder text-center">
             <strong>summer 2017</strong>
             <h2>new summer trends</h2>
-            <a href="#" class="shop-btn">shopw now</a>
+            <a href="#" class="shop-btn">shop now</a>
           </div>
         </div>
       </div>
@@ -176,16 +176,30 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
           <div class="text-holder text-center">
             <strong>summer 2017</strong>
             <h2>new summer trends</h2>
-            <a href="#" class="shop-btn">shopw now</a>
+            <a href="#" class="shop-btn">shop now</a>
           </div>
         </div>
       </div>
-
     </div>
   </div>
 </div>
-<!-- featured items 3-4 items -->
-<div class="featurd-items-collection">
+<!-- Welcome to our shop -->
+<div id="welcome">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <h2>welcome to our shop</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+        </p>
+        <a href="#" class="about-btn">about us</a>
+        <a href="#" class="shop-btn">shop now</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- featured items 3 items -->
+<div class="featured-items-collection">
   <div class="container">
     <div class="text-heading col-auto text-center">
       <div class="text-holder">
@@ -199,7 +213,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
       <img src="img/1.jpg" alt="sample11"/>
       <div class="text-holder">
         <div><h2><i class="fab fa-instagram"></i></h2></div>
-
         <div><p>price</p></div>
         <a href="#"></a>
       </div>
@@ -208,7 +221,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
       <img src="img/2.jpg" alt="sample12"/>
       <div class="text-holder">
         <div><h2><i class="fab fa-instagram"></i></h2></div>
-
           <div><p>price</p></div>
         <a href="#"></a>
       </div>
@@ -231,9 +243,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             <hr />
             <h2> BROWSE PRODUCTS</h2>
           </div>
-
         <main class="main1">
-
           <section class="info1 animate-info-1">
             <h2>A Collection</h2>
             <p>
@@ -261,7 +271,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             <img src="img/pic11.jpeg" class="figure-img" />
           </figure>
           <section class="info2 animate-info-2">
-
           <h2>S Collection</h2>
             <p>
               Lorem Ipsum
@@ -277,7 +286,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         </main>
         </div>
       </div>
-<!-- parallax  section -->
+<!-- Parallax  section -->
 <div class="parallax-heading-bg">
   <div class="container">
     <div class="tagline">
@@ -287,6 +296,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </div>
 </div>
+<!-- Text list (feautured news) -->
 <section id="info2">
   <div class="container">
     <div class="row">
@@ -317,7 +327,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </div>
 </section>
-<a href="#top" class="to-top"><i class="fas fa-chevron-up "></i></a>
   <!-- Footer -->
   <?php include('assets/footer.php') ?>
     <!-- Scripts  -->
