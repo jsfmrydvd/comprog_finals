@@ -152,17 +152,32 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <div class="row no-gutters">
       <div class="col-md-4">
         <div class="image-holder ">
-          <img src="img/carousel-two.jpeg" alt="First slide">
+          <img src="img/collection-1.jpg" alt="First slide">
+          <div class="text-holder text-center">
+            <strong>summer 2017</strong>
+            <h2>new summer trends</h2>
+            <a href="#" class="shop-btn">shopw now</a>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="image-holder ">
-          <img src="img/carousel-two.jpeg" alt="First slide">
+          <img src="img/collection-2.jpeg" alt="First slide">
+          <div class="text-holder text-center">
+            <strong>summer 2017</strong>
+            <h2>new summer trends</h2>
+            <a href="#" class="shop-btn">shopw now</a>
+          </div>
         </div>
       </div>
       <div class="col-md-4">
         <div class="image-holder ">
-          <img src="img/carousel-two.jpeg" alt="First slide">
+          <img src="img/collection-3.jpeg" alt="First slide">
+          <div class="text-holder text-center">
+            <strong>summer 2017</strong>
+            <h2>new summer trends</h2>
+            <a href="#" class="shop-btn">shopw now</a>
+          </div>
         </div>
       </div>
 
@@ -219,34 +234,33 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 
         <main class="main1">
 
-          <section class="info1">
+          <section class="info1 animate-info-1">
             <h2>A Collection</h2>
             <p>
               Lorem Ipsum
             </p>
             <a href="#" class="info-lnk">Learn More</a>
           </section>
-
-          <figure class="figure1" style="margin: 0;">
+          <figure class="figure1 animate-fig-one" style="margin: 0;">
             <img src="img/pic02.jpeg" class="figure-img" />
             <h2> bags</h2>
           </figure>
-          <figure class="figure2" style="margin: 0;">
+          <figure class="figure2 animate-fig-two" style="margin: 0;">
             <img src="img/pic07.jpeg" class="figure-img" />
           </figure>
-          <figure class="figure3" style="margin: 0;">
+          <figure class="figure3 animate-fig-three" style="margin: 0;">
             <img src="img/pic08.jpeg" class="figure-img" />
           </figure>
-          <figure class="figure4" style="margin: 0;">
+          <figure class="figure4 animate-fig-four" style="margin: 0;">
             <img src="img/pic09.jpeg" class="figure-img" />
           </figure>
-          <figure class="figure5" style="margin: 0;">
+          <figure class="figure5 animate-fig-five" style="margin: 0;">
             <img src="img/pic10.jpeg" class="figure-img" />
           </figure>
           <figure class="figure6" style="margin: 0;">
             <img src="img/pic11.jpeg" class="figure-img" />
           </figure>
-          <section class="info2">
+          <section class="info2 animate-info-2">
 
           <h2>S Collection</h2>
             <p>
@@ -254,10 +268,10 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             </p>
             <a href="#" class="info-link">Learn more</a>
           </section>
-          <figure class="figure7" style="margin: 0;">
+          <figure class="figure7 animate-fig-six" style="margin: 0;">
             <img src="img/pic13.jpeg" class="figure-img" />
           </figure>
-          <figure class="figure8" style="margin: 0;">
+          <figure class="figure8 animate-fig-seven" style="margin: 0;">
             <img src="img/pic14.jpeg" class="figure-img" />
           </figure>
         </main>
@@ -303,7 +317,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </div>
 </section>
-
+<a href="#top" class="to-top"><i class="fas fa-chevron-up "></i></a>
   <!-- Footer -->
   <?php include('assets/footer.php') ?>
     <!-- Scripts  -->

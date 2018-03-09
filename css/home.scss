@@ -179,7 +179,7 @@
   background-color: #F7F5F5;
   padding-bottom: 150px;
   padding-top: 100px;
-
+  position: relative;
   .text-heading {
     .text-holder {
       hr {
@@ -616,11 +616,44 @@ footer {
   .image-holder {
     overflow: hidden;
     img {
-      width: 50vh;
+      width: 68vh;
       height: 30vh;
       display: flex;
       object-fit: cover;
       flex-wrap: wrap;
+      opacity: 0.8;
+      position: relative;
+      &:hover {
+        opacity: 1;
+        transition: 0.6s ease-out;
+        width: 70vh;
+      }
+    }
+    .text-holder {
+      position: absolute;
+      top: 10vh;
+      left: 16vh;
+      transform: translate(0%,0%);
+      text-transform: uppercase;
+      strong {
+        font-size: 12px;
+        color: white;
+      }
+      h2 {
+        font-weight: 700;
+        color: white;
+        font-size: 1.3em;
+      }
+      a {
+        border-radius: 20px;
+        border: 1px solid white;
+        font-size: 8px;
+        padding: 3px 5px;
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+
+      }
     }
   }
 }
