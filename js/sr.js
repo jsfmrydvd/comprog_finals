@@ -40,7 +40,6 @@ sr.reveal('.info-right', {
   duration: 5000,
   origin:'left',
   distance:'300px',
-  rotate: { x: 2, y: 1, z: 76 },
   delay: 3,
   viewFactor: 0.2
 });
@@ -48,9 +47,6 @@ sr.reveal('.info-right-two', {
   duration: 6000,
   origin:'left',
   distance:'400px',
-  rotate: { x: 2, y: 1, z: 76 },
-  scale: 0.9,
-  easing: 'cubic-bezier(0.6, 0.2, 0.1, 1)',
   viewFactor: 0.2
 });
 sr.reveal('.image-content.one', {
@@ -68,8 +64,14 @@ sr.reveal('.image-content.three', {
   origin:'right',
   distance:'250px',
 });
-sr.reveal('.para', {
+
+sr.reveal('.animate-info-1', {
   duration: 3000,
   origin:'left',
+  distance:'250px',
+});
+sr.reveal('.animate-info-2', {
+  duration: 3000,
+  origin:'right',
   distance:'250px',
 });
