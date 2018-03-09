@@ -169,9 +169,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </div>
 </div>
-
 <!-- featured items 3-4 items -->
-<!-- featured items -->
 <div class="featurd-items-collection">
   <div class="container">
     <div class="text-heading col-auto text-center">
@@ -306,10 +304,9 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
   </div>
 </section>
 
-<!-- Footer -->
-<?php include('assets/footer.php') ?>
+  <!-- Footer -->
+  <?php include('assets/footer.php') ?>
     <!-- Scripts  -->
-
   <?php include('assets/scripts.php') ?>
   </body>
 </html>
