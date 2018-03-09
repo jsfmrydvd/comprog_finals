@@ -190,7 +190,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
       <div class="col-md-12 text-center">
         <h2>welcome to our shop</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh <br />euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
         </p>
         <a href="#" class="about-btn">about us</a>
         <a href="#" class="shop-btn">shop now</a>
@@ -198,6 +198,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </div>
 </div>
+<hr />
 <!-- featured items 3 items -->
 <div class="featured-items-collection">
   <div class="container">
@@ -236,56 +237,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
     </div>
   </div>
-    <!-- Gallery image -->
-      <div class="bp-section">
-        <div class="container">
-          <div class="heading">
-            <hr />
-            <h2> BROWSE PRODUCTS</h2>
-          </div>
-        <main class="main1">
-          <section class="info1 animate-info-1">
-            <h2>A Collection</h2>
-            <p>
-              Lorem Ipsum
-            </p>
-            <a href="#" class="info-lnk">Learn More</a>
-          </section>
-          <figure class="figure1 animate-fig-one" style="margin: 0;">
-            <img src="img/pic02.jpeg" class="figure-img" />
-            <h2> bags</h2>
-          </figure>
-          <figure class="figure2 animate-fig-two" style="margin: 0;">
-            <img src="img/pic07.jpeg" class="figure-img" />
-          </figure>
-          <figure class="figure3 animate-fig-three" style="margin: 0;">
-            <img src="img/pic08.jpeg" class="figure-img" />
-          </figure>
-          <figure class="figure4 animate-fig-four" style="margin: 0;">
-            <img src="img/pic09.jpeg" class="figure-img" />
-          </figure>
-          <figure class="figure5 animate-fig-five" style="margin: 0;">
-            <img src="img/pic10.jpeg" class="figure-img" />
-          </figure>
-          <figure class="figure6" style="margin: 0;">
-            <img src="img/pic11.jpeg" class="figure-img" />
-          </figure>
-          <section class="info2 animate-info-2">
-          <h2>S Collection</h2>
-            <p>
-              Lorem Ipsum
-            </p>
-            <a href="#" class="info-link">Learn more</a>
-          </section>
-          <figure class="figure7 animate-fig-six" style="margin: 0;">
-            <img src="img/pic13.jpeg" class="figure-img" />
-          </figure>
-          <figure class="figure8 animate-fig-seven" style="margin: 0;">
-            <img src="img/pic14.jpeg" class="figure-img" />
-          </figure>
-        </main>
-        </div>
-      </div>
+
 <!-- Parallax  section -->
 <div class="parallax-heading-bg">
   <div class="container">
@@ -296,31 +248,81 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </div>
 </div>
+<!-- Gallery image -->
+  <div class="bp-section">
+    <div class="container">
+      <div class="heading">
+        <h2> BROWSE PRODUCTS</h2>
+        <hr />
+      </div>
+    <main class="main1">
+      <section class="info1 animate-info-1">
+        <h2>A Collection</h2>
+        <p>
+          Lorem Ipsum
+        </p>
+        <a href="#" class="info-lnk">Learn More</a>
+      </section>
+      <figure class="figure1 animate-fig-one" style="margin: 0;">
+        <img src="img/pic02.jpeg" class="figure-img" />
+        <h2> bags</h2>
+      </figure>
+      <figure class="figure2 animate-fig-two" style="margin: 0;">
+        <img src="img/pic07.jpeg" class="figure-img" />
+      </figure>
+      <figure class="figure3 animate-fig-three" style="margin: 0;">
+        <img src="img/pic08.jpeg" class="figure-img" />
+      </figure>
+      <figure class="figure4 animate-fig-four" style="margin: 0;">
+        <img src="img/pic09.jpeg" class="figure-img" />
+      </figure>
+      <figure class="figure5 animate-fig-five" style="margin: 0;">
+        <img src="img/pic10.jpeg" class="figure-img" />
+      </figure>
+      <figure class="figure6" style="margin: 0;">
+        <img src="img/pic11.jpeg" class="figure-img" />
+      </figure>
+      <section class="info2 animate-info-2">
+      <h2>S Collection</h2>
+        <p>
+          Lorem Ipsum
+        </p>
+        <a href="#" class="info-link">Learn more</a>
+      </section>
+      <figure class="figure7 animate-fig-six" style="margin: 0;">
+        <img src="img/pic13.jpeg" class="figure-img" />
+      </figure>
+      <figure class="figure8 animate-fig-seven" style="margin: 0;">
+        <img src="img/pic14.jpeg" class="figure-img" />
+      </figure>
+    </main>
+    </div>
+  </div>
 <!-- Text list (feautured news) -->
 <section id="info2">
   <div class="container">
     <div class="row">
       <div class="col-md-3 col-sm-3">
         <div class="info-left">
-          <h2>Info Block One</h2>
+          <h2>BLOG 1</h2>
           <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
         </div>
       </div>
       <div class="col-md-3 col-sm-3">
         <div class="info-left-two">
-          <h2>Info Block Two</h2>
+          <h2>BLOG 2</h2>
           <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
         </div>
       </div>
       <div class="col-md-3 col-sm-3">
         <div class="info-right">
-          <h2>Info Block One</h2>
+          <h2>BLOG 3</h2>
           <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
         </div>
       </div>
       <div class="col-md-3 col-sm-3">
         <div class="info-right-two">
-          <h2>Info Block Two</h2>
+          <h2>BLOG 4</h2>
           <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
         </div>
       </div>

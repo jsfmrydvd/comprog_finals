@@ -385,31 +385,38 @@
   h2 {
     text-transform: uppercase;
     font-weight: 600;
-    color: gray;
+    color: #7d2121;
     font-size: 2em;
   }
   p {
     font-size: 16px;
     font-weight: 300;
+    margin-bottom: 30px;
   }
   .about-btn {
     border-radius: 20px;
     border: 2px solid black;
+    background-color: white;
     font-size: 12px;
     padding: 8px 15px;
     color: black;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
+    &:hover {
+      background-color: black;
+      color: white;
+    }
 
   }
   .shop-btn {
+
     border-radius: 20px;
     border: 2px solid black;
-    background-color: gray;
+    background-color: black;
     font-size: 12px;
     padding: 8px 15px;
-    color: black;
+    color: white;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
@@ -432,8 +439,8 @@
       }
 
       h2 {
-        font-family: Raleway, sans-serif;
-        font-size: 14px;
+        font-family: sans-serif;
+        font-size: 1em;
         font-weight: 700;
         text-transform: uppercase;
       }
@@ -605,7 +612,7 @@ body {
 
 .info1,
 .info2 {
-  background-color: #132d3b;
+  background-color: #000c12;
   color: #fff;
   padding: 40px;
 }
@@ -613,6 +620,7 @@ body {
 h2 {
   font-size: 2em;
   margin-bottom: 1rem;
+  font-weight: 400;
 }
 
 p {
@@ -621,7 +629,7 @@ p {
 }
 
 a {
-  color: red;
+  color: #ffb9b9;
   text-decoration: none;
 }
 // parallax section
@@ -969,20 +977,23 @@ text-align: center !important;
 }
 @media (min-width: 600px) {
   .bp-section {
+    margin-top: 100px;
     margin-bottom: 100px;
     .heading {
+      hr {
+
+        border: 1px solid gray;
+        color: gray;
+        margin-bottom: 50px;
+        width: 40px;
+      }
+
       h2 {
-        position: relative;
-        width: 41vh;
-        display: block;
-        margin: auto;
-        background-color: #F7F5F5;
-        top: -38px;
-        right: 0px;
-        bottom: 0;
-        left: 0;
-        padding: 0 4px;
-        font-weight: 300;
+        text-align: center !important;
+        font-family: sans-serif;
+        font-size: 1em;
+        font-weight: 700;
+        text-transform: uppercase;
       }
     }
     main {
