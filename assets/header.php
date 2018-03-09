@@ -11,5 +11,12 @@
   <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
   <!-- sr-reveal -->
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-
+<style>
+.header-primary {
+  background-color: #F7F5F5;
+  }
+.navbar {
+  background-color: #F7F5F5;
+}
+</style>
 </head>
