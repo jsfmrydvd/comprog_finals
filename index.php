@@ -124,36 +124,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
       </div>
     </nav>
     </header>
-
-  <!-- Carousel -->
-  <div class="section-carousel">
-    <div id="carouselMain" class="carousel slide" data-ride="carousel">
-      <ol class="carousel-indicators">
-        <li data-target="#carouselMain" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselMain" data-slide-to="1"></li>
-        <li data-target="#carouselMain" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img class="d-block w-100" src="img/carousel1.jpeg" alt="First slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/pic11.jpeg" alt="Second slide">
-        </div>
-        <div class="carousel-item">
-          <img class="d-block w-100" src="img/pic02.jpeg" alt="Third slide">
-        </div>
-      </div>
-      <a class="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next" href="#carouselMain" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div>
       <a href="#" class="scroll-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 <!-- Footer -->
     <footer>
