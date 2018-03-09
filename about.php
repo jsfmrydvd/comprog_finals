@@ -8,7 +8,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 ?>
   <?php include('assets/header.php') ?>
   <body>
-
     <header>
     <div class="header-top">
       <div class="container">

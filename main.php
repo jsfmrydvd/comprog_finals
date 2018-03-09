@@ -198,7 +198,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </div>
 </div>
-<hr />
 <!-- featured items 3 items -->
 <div class="featured-items-collection">
   <div class="container">
@@ -299,31 +298,33 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </div>
 <!-- Text list (feautured news) -->
-<section id="info2">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-3 col-sm-3">
-        <div class="info-left">
-          <h2>BLOG 1</h2>
-          <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+<section id="info-section">
+  <div class="info-bg-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-3">
+          <div class="info-left">
+            <h2>BLOG 1</h2>
+            <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-3">
-        <div class="info-left-two">
-          <h2>BLOG 2</h2>
-          <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+        <div class="col-md-3 col-sm-3">
+          <div class="info-left-two">
+            <h2>BLOG 2</h2>
+            <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-3">
-        <div class="info-right">
-          <h2>BLOG 3</h2>
-          <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+        <div class="col-md-3 col-sm-3">
+          <div class="info-right">
+            <h2>BLOG 3</h2>
+            <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+          </div>
         </div>
-      </div>
-      <div class="col-md-3 col-sm-3">
-        <div class="info-right-two">
-          <h2>BLOG 4</h2>
-          <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+        <div class="col-md-3 col-sm-3">
+          <div class="info-right-two">
+            <h2>BLOG 4</h2>
+            <p>Adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+          </div>
         </div>
       </div>
     </div>
