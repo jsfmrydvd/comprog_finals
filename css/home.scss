@@ -612,7 +612,18 @@ footer {
   }
 
 }
-
+#collections {
+  .image-holder {
+    overflow: hidden;
+    img {
+      width: 50vh;
+      height: 30vh;
+      display: flex;
+      object-fit: cover;
+      flex-wrap: wrap;
+    }
+  }
+}
 @keyframes mymove {
   from {
     left: 100px;

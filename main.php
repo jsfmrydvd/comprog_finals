@@ -86,17 +86,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         </ul>
       </div>
     </nav>
-  <!-- background-image -->
-  <!-- <div class="bg-image">
-    <div class="wrapper">
-      <div class="header text">
-        <h1 class="animated flipInY"><span>Comprog</span>Design</h1>
-      </div>
-      <div class="tagline">
-        <button type="button" class="btn1" onclick="products.php">View Products</button>
-      </div>
-    </div>
-</div> -->
 <!-- Carousel -->
 <div class="section-carousel">
   <div id="carouselMain" class="carousel slide" data-ride="carousel">
@@ -157,6 +146,30 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </a>
   </div>
 </div>
+<!-- collection -->
+<div id="collections">
+  <div class="container-fluid" style="padding: 0;">
+    <div class="row no-gutters">
+      <div class="col-md-4">
+        <div class="image-holder ">
+          <img src="img/carousel-two.jpeg" alt="First slide">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="image-holder ">
+          <img src="img/carousel-two.jpeg" alt="First slide">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="image-holder ">
+          <img src="img/carousel-two.jpeg" alt="First slide">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 <!-- featured items 3-4 items -->
 <!-- featured items -->
 <div class="featurd-items-collection">
@@ -199,34 +212,12 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </div>
     <!-- Gallery image -->
-<!--
-      <section class="browse-products">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 text-right">
-              <img height="200px" width="200px"src="img/main.jpeg" />
-              <div class="text-holder">
-
-              </div>
-            </div>
-            <div class="col-md-3">
-                <img height="200px" width="200px"src="img/main.jpeg" />
-
-            </div>
-            <div class="col-md-3">
-                <img height="200px" width="200px"src="img/main.jpeg" />
-                  <img height="200px" width="200px"src="img/main.jpeg" />
-            </div>
-          </div>
-        </div>
-      </section> -->
       <div class="bp-section">
         <div class="container">
           <div class="heading">
             <hr />
             <h2> BROWSE PRODUCTS</h2>
           </div>
-
 
         <main class="main1">
 
