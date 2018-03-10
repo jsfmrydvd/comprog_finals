@@ -108,7 +108,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         </div>
       </div>
       <!-- Second carousel slide -->
-      <div class="carousel-item ">
+      <div class="carousel-item">
         <img class="d-block w-100" src="img/carousel-1.jpg" alt="Second slide">
         <div class="carousel-caption one text-left">
           <h3 class="alt-font">Mens Clothing</h3>
@@ -131,7 +131,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
           <h2 class="uppercase"><strong>HOT SUMMER <br /><span>FASHION</span></strong></h2>
         </div>
         <div class="carousel-caption third-three text-right">
-          <hr />
+
           <a href="products.php" class="primary-product-button">Shop Now</a>
         </div>
       </div>
@@ -150,30 +150,30 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 <div id="collections">
   <div class="container-fluid" style="padding: 0;">
     <div class="row no-gutters">
-      <div class="col-md-4">
+      <div class="col-md-4 text-center">
         <div class="image-holder ">
           <img src="img/collection-1.jpg" alt="First slide">
-          <div class="text-holder text-center">
+          <div class="text-holder center-content">
             <strong>summer 2017</strong>
             <h2>new summer trends</h2>
             <a href="#" class="shop-btn">shop now</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 text-left">
         <div class="image-holder ">
           <img src="img/collection-2.jpeg" alt="First slide">
-          <div class="text-holder text-center">
+          <div class="text-holder left-content">
             <strong>summer 2017</strong>
             <h2>new summer trends</h2>
             <a href="#" class="shop-btn">shop now</a>
           </div>
         </div>
       </div>
-      <div class="col-md-4">
+      <div class="col-md-4 text-right">
         <div class="image-holder ">
           <img src="img/collection-3.jpeg" alt="First slide">
-          <div class="text-holder text-center">
+          <div class="text-holder right-content">
             <strong>summer 2017</strong>
             <h2>new summer trends</h2>
             <a href="#" class="shop-btn">shop now</a>
@@ -210,7 +210,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
     <div class="row d-flex justify-content-around">
       <div class="image-content one">
-      <img src="img/1.jpg" alt="sample11"/>
+      <img src="img/watch-2.jpeg" alt="sample11"/>
       <div class="text-holder">
         <div><h2><i class="fab fa-instagram"></i></h2></div>
         <div><p>price</p></div>
@@ -218,7 +218,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
       </div>
       </div>
       <div class="image-content two">
-      <img src="img/2.jpg" alt="sample12"/>
+      <img src="img/featured-2.jpeg" alt="sample12"/>
       <div class="text-holder">
         <div><h2><i class="fab fa-instagram"></i></h2></div>
           <div><p>price</p></div>
@@ -226,7 +226,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
       </div>
       </div>
       <div class="image-content three">
-      <img src="img/3.jpg" alt="sample13"/>
+      <img src="img/featured-3.jpg" alt="sample13"/>
       <div class="text-holder">
         <div><h2><i class="fab fa-instagram"></i></h2></div>
           <div><p>price</p></div>
@@ -263,23 +263,22 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <a href="#" class="info-lnk">Learn More</a>
       </section>
       <figure class="figure1 animate-fig-one" style="margin: 0;">
-        <img src="img/pic02.jpeg" class="figure-img" />
-        <h2> bags</h2>
+        <img src="img/watch-1.jpeg" class="figure-img" />
       </figure>
       <figure class="figure2 animate-fig-two" style="margin: 0;">
-        <img src="img/pic07.jpeg" class="figure-img" />
+        <img src="img/watch-3.jpeg" class="figure-img" />
       </figure>
       <figure class="figure3 animate-fig-three" style="margin: 0;">
-        <img src="img/pic08.jpeg" class="figure-img" />
+        <img src="img/watch-6.jpeg" class="figure-img" />
       </figure>
       <figure class="figure4 animate-fig-four" style="margin: 0;">
-        <img src="img/pic09.jpeg" class="figure-img" />
+        <img src="img/watch-4.jpeg" class="figure-img" />
       </figure>
       <figure class="figure5 animate-fig-five" style="margin: 0;">
-        <img src="img/pic10.jpeg" class="figure-img" />
+        <img src="img/watch-5.jpeg" class="figure-img" />
       </figure>
       <figure class="figure6" style="margin: 0;">
-        <img src="img/pic11.jpeg" class="figure-img" />
+        <img src="img/watch-7.jpeg" class="figure-img" />
       </figure>
       <section class="info2 animate-info-2">
       <h2>S Collection</h2>
@@ -289,10 +288,10 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <a href="#" class="info-link">Learn more</a>
       </section>
       <figure class="figure7 animate-fig-six" style="margin: 0;">
-        <img src="img/pic13.jpeg" class="figure-img" />
+        <img src="img/camera-1.jpeg" class="figure-img" />
       </figure>
       <figure class="figure8 animate-fig-seven" style="margin: 0;">
-        <img src="img/pic14.jpeg" class="figure-img" />
+        <img src="img/camera-2.jpeg" class="figure-img" />
       </figure>
     </main>
     </div>
@@ -330,6 +329,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </div>
 </section>
+
   <!-- Footer -->
   <?php include('assets/footer.php') ?>
     <!-- Scripts  -->
