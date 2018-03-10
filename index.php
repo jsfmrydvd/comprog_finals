@@ -84,7 +84,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     <!-- Content of the index.php -->
     <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-      <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"/>ITEAM STORE</a>
+      <a class="navbar-brand" href="#">ITEAM STORE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -124,7 +124,10 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
       </div>
     </nav>
     </header>
-      <a href="#" class="scroll-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+      <div class="container">
+        <h2> landing page test</h2>
+        <a href="main.php" style="font-size: 50px;">please click here to continue</a>
+      </div>
 <!-- Footer -->
     <footer>
       <div class="text-footer">
