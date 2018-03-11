@@ -51,6 +51,15 @@ include 'config.php';
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
+          <li class="dropdown">
+              <button class="dropbtn">Collection</button>
+                <div class="dropdown-content">
+                  <a href="#">watch</a>
+                  <a href="#">camera</a>
+                  <a href="#">mens clothing</a>
+                  <a href="#">womens clothing</a>
+                </div>
+          </li>
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">

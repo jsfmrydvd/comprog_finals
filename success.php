@@ -70,9 +70,13 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
   </nav>
 
     <!-- Success text here container nalang -->
-<div class="container">
-  <h2>Success</h2>
-</div>
+    <div class="success-content-alert">
+      <div class="container">
+        <div class="col-md-12 text-center">
+          <h2>success</h2>
+        </div>
+      </div>
+    </div>
 
             <!-- Footer -->
             <?php include('assets/footer.php') ?>

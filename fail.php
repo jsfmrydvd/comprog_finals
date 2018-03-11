@@ -54,7 +54,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
         <li class="nav-item">
           <a class="nav-link" href="products.php">Products</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="orders.php">My Orders</a>
         </li>
         <li class="nav-item">
@@ -69,10 +69,15 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
   </nav>
 
-    <!-- Success text here container nalang -->
-<div class="container">
-  <h2>please login to continue</h2>
-</div>
+    <!-- fail text here container nalang -->
+    <div class="fail-content-alert">
+      <div class="container">
+        <div class="col-md-12 text-center">
+          <h2>please login to continue</h2>
+        </div>
+      </div>
+    </div>
+
 
             <!-- Footer -->
             <?php include('assets/footer.php') ?>
