@@ -80,8 +80,9 @@ include 'config.php';
           if(isset($_SESSION['cart'])) {
 
             $total = 0;
-            echo '<table>';
+            echo '<table style="margin: auto;">';
             echo '<tr>';
+            echo '<th>Product</th>';
             echo '<th>Code</th>';
             echo '<th>Name</th>';
             echo '<th>Quantity</th>';
@@ -99,7 +100,7 @@ include 'config.php';
                 $total = $total + $cost; //add to the total cost
 
                 echo '<tr>';
-              echo '<img width="100px" height="100px" src="images/products/products/'.$obj->product_img_name.'"/>';
+              echo '<td><img width="100px" height="100px" src="img/'.$obj->product_img_name.'"/></td>';
                 echo '<td>'.$obj->product_code.'</td>';
                 echo '<td>'.$obj->product_name.'</td>';
                 echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';
@@ -113,6 +114,7 @@ include 'config.php';
 
 
           echo '<tr>';
+          echo '<td colspan="3" align="right">Total</td>';
           echo '<td colspan="3" align="right">Total</td>';
           echo '<td>'.$total.'</td>';
           echo '</tr>';
