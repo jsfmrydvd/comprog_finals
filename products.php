@@ -72,9 +72,16 @@ include 'config.php';
 
 
 
-
+    <div class="featured-items-collection products">
+      <div class="container">
+        <div class="text-heading col-auto text-center">
+          <div class="text-holder">
+            <!-- heading -->
+            <h2>Featured Collections</h2>
+                <hr />
+          </div>
+        </div>
     <div class="row d-flex justify-content-around">
-      <div class="image-content">
         <?php
           $i=0;
           $product_id = array();
@@ -90,9 +97,9 @@ include 'config.php';
 
             while($obj = $result->fetch_object()) {
 
-              echo '<div class="col-md-12 text-center">';
+              echo '<div class="image-content-products">';
               echo '<p><h3>'.$obj->product_name.'</h3></p>';
-              echo '<img width="100px" height="100px" src="images/products/products/'.$obj->product_img_name.'"/>';
+              echo '<img src="img/'.$obj->product_img_name.'"/>';
               echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
               echo '<p><strong>Description</strong>: '.$obj->product_desc.'</p>';
               echo '<p><strong>Units Available</strong>: '.$obj->qty.'</p>';
@@ -118,6 +125,9 @@ include 'config.php';
 
           echo '</div>';
           echo '</div>';
+            echo '</div>';
+              echo '</div>';
+
           ?>
 
                   <!-- Footer -->
