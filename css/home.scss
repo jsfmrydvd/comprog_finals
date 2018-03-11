@@ -1213,42 +1213,6 @@ footer {
   }
 }
 
-#content {
-  .image-holder {
-    overflow: hidden;
-    position: relative;
-    img {
-      position: relative;
-      height: 300px;
-      display: block;
-      // overflow: hidden;
-    }
-
-    .text-holder {
-      position: absolute;
-      bottom: 7vh;
-      left: 0vh;
-      opacity: 0.8;
-      display: block;
-      width: 100%;
-      background-color: #fff;
-
-      h2 {
-        color: red;
-      }
-      &:hover {
-        background-color: red;
-        transition: 0.2s ease-in-out;
-        cursor: pointer;
-      }
-    }
-  }
-  * {
-    box-sizing: border-box;
-    padding: 0;
-    // margin: 0;
-  }
-}
 .navbar-toggler:not([disabled]):not(.disabled) {
   background-color: black;
 }
