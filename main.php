@@ -17,56 +17,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
   <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
   <!--sr script  -->
   <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-  <style>
-  .dropbtn {
-
-      border: none;
-      color: #2a2a2a;
-      font-family: 'lato', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      padding: 5px 25px;
-      position: relative;
-      text-transform: uppercase;
-  }
-
-  .dropdown {
-      position: relative;
-      display: inline-block;
-  }
-
-  .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: #f1f1f1;
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-  }
-
-  .dropdown-content a {
-      color: black;
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      font-family: 'lato', sans-serif;
-      font-size: 12px;
-      text-transform: uppercase;
-      font-weight: lighter;
-  }
-
-  .dropdown-content a:hover {background-color: #ddd}
-
-  .dropdown:hover .dropdown-content {
-      display: block;
-  }
-
-  .dropdown:hover .dropbtn {
-      background-color: #60767d;
-      color: white;
-  }
-  </style>
 </head>
   <body>
     <!-- Content of the the top -->
@@ -125,16 +75,15 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
-
-        <li class="dropdown">
-            <button class="dropbtn">Collection</button>
-              <div class="dropdown-content">
-                <a href="#">watch</a>
-                <a href="#">camera</a>
-                <a href="#">mens clothing</a>
-                <a href="#">womens clothing</a>
-              </div>
-        </li>
+          <li class="dropdown">
+              <button class="dropbtn">Collection</button>
+                <div class="dropdown-content">
+                  <a href="#">watch</a>
+                  <a href="#">camera</a>
+                  <a href="#">mens clothing</a>
+                  <a href="#">womens clothing</a>
+                </div>
+          </li>
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">

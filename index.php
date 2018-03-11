@@ -14,130 +14,116 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- bootstrap CDN -->
-  <!-- fontawesome -->
   <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
 
   <style type="text/css">
+body{
+  margin:0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size:1rem;
+  font-weight:normal;
+  line-height:1.5;
+  color:#333;
+overflow-x:hidden;
+}
 
-      * {
-          margin: 0;
-          padding: 0;
-      }
-      body {
-          font-family: 'Open Sans', Arial, sans-serif;
-          font-weight: 700;
-      }
-      .welcome-section {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          left: 0;
-          background-color: #000;
-          overflow: hidden;
-      }
-      .welcome-section .content-wrap {
-          position: absolute;
-          left: 50%;
-          top: 50%;
-          transform: translate3d(-50%, -50%, 0);
-      }
-      .welcome-section .content-wrap .fly-in-text {
-          list-style: none;
-      }
-      .welcome-section .content-wrap .fly-in-text li {
-          display: inline-block;
-          margin-right: 30px;
-          font-size: 5em;
-          color: #fff;
-          opacity: 1;
-          transition: all 2s ease;
-          font-family: monospace, sans-serif;
-      }
-      .welcome-section .content-wrap .fly-in-text li:last-child {
-          margin-right: 0;
-      }
-      .welcome-section .content-wrap .enter-button {
-          display: block;
-          text-align: center;
-          font-size: 1em;
-          text-decoration: none;
-          text-transform: uppercase;
-          color: #22c9ec;
-          opacity: 1;
-          transition: all 1s ease 2s;
-      }
+.v-header{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  color:#fff;
+}
 
-      .welcome-section.content-hidden .content-wrap .fly-in-text li { opacity: 0; }
-      .welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(1) { transform: translate3d(-100px, 0, 0); }
-      .welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(2) { transform: translate3d(100px, 0, 0); }
-      .welcome-section.content-hidden .content-wrap .enter-button { opacity: 0; transform: translate3d(0, -30px, 0); }
+.container{
+  max-width:960px;
+  padding-left:1rem;
+  padding-right:1rem;
+  margin:auto;
+  text-align:center;
+}
 
-      @media (min-width: 800px) {
-          .welcome-section .content-wrap .fly-in-text li { font-size: 10em; }
-          .welcome-section .content-wrap .enter-button { font-size: 1.5em; }
-      }
+.fullscreen-video-wrap{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100vh;
+  overflow:hidden;
+}
+
+.fullscreen-video-wrap video{
+  min-height:100%;
+  min-width:100%;
+}
+
+.header-overlay{
+  height:100vh;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100vw;
+  z-index:1;
+  background:#0e0e0e;
+  opacity:0.85;
+}
+
+.header-content{
+  z-index:2;
+}
+
+.header-content h1{
+  font-size:50px;
+  margin-bottom:0;
+}
+
+.header-content p{
+  font-size:1.5rem;
+  display:block;
+  padding-bottom:2rem;
+}
+
+.btn{
+  background: #608882;
+  color:#fff;
+  font-size:1rem;
+  padding: 0.3rem 1rem;
+  text-decoration: none;
+}
+.btn:hover {
+  color: white;
+  background-color: black;
+}
+
+
+
+
+@media(max-width:960px){
+  .container{
+    padding-right:3rem;
+    padding-left:3rem;
+  }
+}
   </style>
 </head>
   <body>
     <!-- Content of the index.php -->
-    <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-      <a class="navbar-brand" href="#">ITEAM STORE</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="main.php">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.php">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="products.php">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="cart.php">View Cart</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="orders.php">My Orders</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <?php
-          if(isset($_SESSION['username'])){
-            echo '<li class="nav-item ml-2 mx-2"><a href="account.php" class="nav-link"><i class="fas fa-user"></i>Your Account</a></li>';
-            echo '<li class="nav-item ml-2 mx-2"><a href="logout.php" class="nav-link"><i class="fas fa-shopping-cart"></i>Log Out</a></li>';
-          }
-          else{
-            echo '<li class="nav-item ml-2 mx-2"><a href="login.php" class="nav-link">Log In</a></li>';
-            echo '<li class="nav-item ml-2 mx-2"><a href="register.php" class="nav-link">Register</a></li>';
-          }
-          ?>
-        </ul>
-      </div>
-    </nav>
-    </header>
-      <div class="container">
-        <h2> landing page test</h2>
-        <a href="main.php" style="font-size: 50px;">please click here to continue</a>
-      </div>
-<!-- Footer -->
-    <footer>
-      <div class="text-footer">
-        <span class="text-left">&copy; Comprog 2. All Rights Reserved</span>
-        <span class="text-right"><a href="#">Who Designed This Website?</a></span>
-      </div>
-    </footer>
+    <header class="v-header container">
+  <div class="fullscreen-video-wrap">
+    <!--  https://www.videvo.net/video/typing-on-computer-white-bg/4475/ -->
+    <!-- DO NOT USE THIS VIDEO, I JUST NEEDED A HOSTED VIDEO FOR THIS CODEPEN> USE THE ONE ABOVE -->
+    <video src="https://production.cdmycdn.com/assets/marketing-pages/intensives/bws/coding-scenes-9a2031e8142b40bdb5d936d5eef33dfa.mp4" autoplay="" loop="">
+  </video>
+  </div>
+  <div class="header-overlay"></div>
+  <div class="header-content text-md-center">
+    <h1>Comprog 2</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Id temporibus perferendis necessitatibus numquam amet impedit explicabo? Debitis quasi ullam aperiam!</p>
+    <a href="main.php"class="btn">Go to the website</a>
+  </div>
+</header>
 
     <!-- Welcome Screen before the content -->
-    <div class="welcome-section content-hidden">
+    <!-- <div class="welcome-section content-hidden">
         <div class="content-wrap">
             <ul class="fly-in-text">
                 <li>I</li>
@@ -145,7 +131,7 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
             </ul>
             <a href="#" class="enter-button">Enter</a>
         </div>
-    </div>
+    </div> -->
     <!-- Scripts  -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>

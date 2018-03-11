@@ -112,6 +112,51 @@
         }
       }
     }
+    .dropdown {
+      position: relative;
+      display: inline-block;
+      &:hover {
+        .dropbtn {
+          background-color: #60767d;
+          color: white;
+        }
+        .dropdown-content {
+          display: block;
+        }
+      }
+      .dropbtn {
+        border: none;
+        color: #2a2a2a;
+        font-family: 'lato', sans-serif;
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 2px;
+        padding: 5px 25px;
+        position: relative;
+        text-transform: uppercase;
+      }
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f1f1f1;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          font-family: 'lato', sans-serif;
+          font-size: 12px;
+          text-transform: uppercase;
+          font-weight: lighter;
+          &:hover {
+            background-color: #ddd
+          }
+        }
+      }
+    }
   }
 }
 
@@ -696,8 +741,7 @@ a {
 
 footer {
   .text-footer {
-    background-color: #29292c;
-    color: white;
+    background-color: #d5d5d5;
     font-family: sans-serif;
     font-size: 12px;
     font-weight: bolder;
@@ -706,7 +750,7 @@ footer {
     text-align: center;
 
     .text-left {
-      color: #d5d5d5;
+      color: black;
     }
 
     .text-right {
@@ -1215,6 +1259,17 @@ footer {
   padding-bottom: 150px;
   padding-top: 100px;
   position: relative;
+  .text-holder {
+    h2 {
+      border: none;
+      width: 25vh;
+      display: block;
+      margin: auto;
+      background-color: rgba(0, 0, 0, 0.69);
+      color: white;
+      padding: 15px 30px;
+    }
+  }
   .image-content-products {
     background: white;
     color: #000;
@@ -1237,5 +1292,24 @@ footer {
     transition: opacity 0.35s;
     width: 100%;
     height: 25vh;
+    object-fit: cover;
+  }
+}
+
+// fail.php {} & success
+.fail-content-alert,.success-content-alert {
+  height: 50vh;
+  width: 500px;
+  display: block;
+  margin: auto;
+  transform: translate(0%, 25%);
+
+  h2 {
+    font-weight: 700;
+    font-size: 3em;
+    text-transform: uppercase;
+    background-color: rgba(0, 0, 0, 0.69);
+    color: white;
+    padding: 30px 30px;
   }
 }
