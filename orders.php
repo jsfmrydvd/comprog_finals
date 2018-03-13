@@ -8,45 +8,22 @@ if(!isset($_SESSION["username"])){
 }
 include 'config.php';
 ?>
-
-<?php include('assets/header.php') ?>
-<body>
-  <!-- Content of the the top -->
-  <header>
-  <div class="header-top">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <span>new now: our latest products</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Content of the secondary -->
-  <div class="header-primary">
-    <div class="container-fluid">
-      <div class="col-md-12 login-head d-flex text-right">
-        <div class="mr-auto p-2"></div>
-          <?php
-            if(isset($_SESSION['username'])){
-
-              echo '<div class="p-2"><a href="account.php" class="header-login"><i class="fas fa-user"></i></a></div>';
-              echo '<div class="p-2"><a href="logout.php" class="header-login">Log Out</a></div>';
-            }
-            else{
-              echo '<div class="mr-4 p-1"><a href="login.php" class="header-login">Log In</a></div>';
-              echo '<div class="p-1"><a href="register.php" class="header-login">Sign up</a></div>';
-            }
-            ?>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
-  <!-- Navbar here -->
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <?php include('assets/head.html') ?>
+</head>
+  <body>
+    <!-- Content of the the top -->
+    <header>
+      <?php include('assets/header-top.html') ?>
+      <!-- Content of the secondary -->
+      <?php include('assets/header-primary.php') ?>
+    </header>
+    <!-- Navbar here -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <!-- Logo or name-->
-    <a class="navbar-brand mxauto" href="main.php">LOGO DITO HEHE</a>
+    <a class="navbar-brand mxauto" href="main.php">ITEAM STORE</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>
@@ -120,9 +97,9 @@ include 'config.php';
         ?>
       </div>
     </div>
-            <!-- Footer -->
-            <?php include('assets/footer.php') ?>
-            <!-- Scripts -->
-            <?php include('assets/scripts.php') ?>
+    <!-- Footer -->
+    <?php include('assets/footer.html') ?>
+    <!-- Scripts  -->
+    <?php include('assets/scripts.html') ?>
   </body>
 </html>

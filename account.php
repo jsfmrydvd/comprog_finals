@@ -17,20 +17,22 @@ include 'config.php';
 
 ?>
 
-<!-- <head>
-</head>  content-->
-<?php include('assets/header.php') ?>
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+  <?php include('assets/head.html') ?>
+</head>
   <body>
     <!-- Content of the the top -->
     <header>
-      <?php include('assets/header-top.php'); ?>
-    <!-- Content of the secondary -->
-      <?php include('assets/header-primary.php'); ?>
+      <?php include('assets/header-top.html') ?>
+      <!-- Content of the secondary -->
+      <?php include('assets/header-primary.php') ?>
     </header>
     <!-- Navbar here -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
       <!-- Logo or name-->
-      <a class="navbar-brand mxauto" href="main.php">LOGO DITO HEHE</a>
+      <a class="navbar-brand mxauto" href="main.php">ITEAM STORE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -187,16 +189,9 @@ include 'config.php';
         </div>
       </div>
     </form>
-
-
-
-
-        <!-- Footer -->
-        <?php include('assets/footer.php') ?>
-        <!-- Scripts -->
-        <?php include('assets/scripts.php') ?>
-
-
-
+    <!-- Footer -->
+    <?php include('assets/footer.html') ?>
+    <!-- Scripts  -->
+    <?php include('assets/scripts.html') ?>
   </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-$currency = '$';
+$currency = '₱';
 $db_username = 'root';
 $db_password = 'jsfmrydvd';
 $db_name = 'finals_comprog';

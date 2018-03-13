@@ -1,9 +1,10 @@
 <?php
 
-//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 include 'config.php';
 ?>
+
+
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
@@ -18,7 +19,7 @@ include 'config.php';
     </header>
     <!-- Navbar here -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-      <a class="navbar-brand mxauto" href="main.php">LOGO DITO HEHE</a>
+      <a class="navbar-brand mxauto" href="main.php">ITEAM STORE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -56,69 +57,43 @@ include 'config.php';
         </ul>
       </div>
     </nav>
-
-
-
-    <div class="featured-items-collection products">
-      <div class="container">
-        <div class="text-heading col-auto text-center">
-          <div class="text-holder">
-            <!-- heading -->
-            <h2>Products</h2>
-                <hr />
+<!-- new section -->
+<div id="content">
+  <div class="container" style="padding: 0;">
+    <div class="row d-flex justify-content-around">
+      <div class="box-content">
+        <div class="image-holder">
+          <img src="img/collection-1.jpg" alt="First slide">
+          <div class="text-holder text-center">
+            <h2>WATCH</h2>
+            <a href="#" class="shop-btn">6 PRODUCTS</a>
           </div>
         </div>
-    <div class="row d-flex justify-content-around">
-        <?php
-          $i=0;
-          $product_id = array();
-          $product_quantity = array();
-
-          $result = $mysqli->query('SELECT * FROM products');
-          if($result === FALSE){
-            die(mysql_error());
-          }
-
-
-          if($result){
-
-            while($obj = $result->fetch_object()) {
-
-              echo '<div class="image-content-products">';
-              echo '<h3>'.$obj->product_name.'</h3>';
-              echo '<img src="img/'.$obj->product_img_name.'"/>';
-              echo '<p>Product Code: <span>'.$obj->product_code.'</span></p>';
-              echo '<p>Description: <span>'.$obj->product_desc.'</span></p>';
-              echo '<p>Units Available: <span>'.$obj->qty.'</span></p>';
-              echo '<p>Price (Per Unit): <span>'.$currency.$obj->price.'</span></p>';
-
-
-
-              if($obj->qty > 0){
-                echo '<p><a href="update-cart.php?action=add&id='.$obj->id.'"><input class="add" type="submit" value="Add To Cart"/></a></p>';
-              }
-              else {
-                echo 'Out Of Stock!';
-              }
-              echo '</div>';
-
-              $i++;
-            }
-
-          }
-
-          $_SESSION['product_id'] = $product_id;
-
-
-          echo '</div>';
-          echo '</div>';
-            echo '</div>';
-              echo '</div>';
-
-          ?>
-    <!-- Footer -->
-    <?php include('assets/footer.html') ?>
-    <!-- Scripts  -->
-    <?php include('assets/scripts.html') ?>
-  </body>
+      </div>
+      <div class="box-content">
+        <div class="image-holder">
+          <img src="img/collection-2.jpeg" alt="First slide">
+          <div class="text-holder text-center">
+            <h2>BAGS</h2>
+            <a href="#" class="shop-btn">12 products</a>
+          </div>
+        </div>
+      </div>
+      <div class="box-content">
+        <div class="image-holder">
+          <img src="img/collection-3.jpeg" alt="First slide">
+          <div class="text-holder text-center">
+            <h2>CAMERA</h2>
+            <a href="#" class="shop-btn">3 PRODUCTS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Footer -->
+<?php include('assets/footer.html') ?>
+<!-- Scripts  -->
+<?php include('assets/scripts.html') ?>
+</body>
 </html>
