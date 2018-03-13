@@ -33,14 +33,14 @@ sr.reveal('.info-left-two', {
   duration: 4000,
   origin:'left',
   distance:'200px',
-  delay: 2,
+
   viewFactor: 0.2
 });
 sr.reveal('.info-right', {
   duration: 5000,
   origin:'left',
   distance:'300px',
-  delay: 3,
+
   viewFactor: 0.2
 });
 sr.reveal('.info-right-two', {
