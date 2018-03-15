@@ -1,18 +1,9 @@
 <?php
 
+//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
-
-if(isset($_SESSION["username"])){
-
-        header("location:main.php");
-}
-if(empty($_POST["fname"]) || empty($_POST["pwd"])) {
-
-
-}
-
+include 'config.php';
 ?>
-
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
@@ -27,8 +18,7 @@ if(empty($_POST["fname"]) || empty($_POST["pwd"])) {
     </header>
     <!-- Navbar here -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-      <!-- Logo or name-->
-      <a class="navbar-brand mxauto" href="main.php">ITEAM STORE</a>
+      <a class="navbar-brand mxauto" href="main.php">LOGO DITO HEHE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,7 +31,7 @@ if(empty($_POST["fname"]) || empty($_POST["pwd"])) {
             <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="products.php">Products</a>
+            <a class="nav-link active" href="products.php">Products</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="orders.php">My Orders</a>
@@ -67,40 +57,65 @@ if(empty($_POST["fname"]) || empty($_POST["pwd"])) {
       </div>
     </nav>
 
-<!-- Login Form here -->
-    <form method="POST" action="verify.php" style="margin-top:30px;">
-      <div class="row">
-        <div class="col-md-12">
 
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">Email</label>
-            </div>
-            <div class="col-md-12">
-              <input type="email" id="right-label" placeholder="email@gmail.com" name="username">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">Password</label>
-            </div>
-            <div class="col-md-12">
-              <input type="password" id="right-label" name="pwd">
-            </div>
-          </div>
 
-          <div class="row">
-            <div class="col-md-12">
-
-            </div>
-            <div class="col-md-12">
-              <input type="submit" id="right-label" value="Login" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;">
-              <input type="reset" id="right-label" value="Reset" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;">
-            </div>
+    <div class="featured-items-collection products">
+      <div class="container">
+        <div class="text-heading col-auto text-center">
+          <div class="text-holder">
+            <!-- heading -->
+            <h2>Camera</h2>
+                <hr />
           </div>
         </div>
-      </div>
-    </form>
+    <div class="row d-flex justify-content-around">
+        <?php
+          $i=0;
+          $product_id = array();
+          $product_quantity = array();
+
+          $result = $mysqli->query('SELECT * FROM camera');
+          if($result === FALSE){
+            die(mysql_error());
+          }
+
+
+          if($result){
+
+            while($obj = $result->fetch_object()) {
+
+              echo '<div class="image-content-products">';
+              echo '<h3>'.$obj->product_name.'</h3>';
+              echo '<img src="img/'.$obj->product_img_name.'"/>';
+              echo '<p>Product Code: <span>'.$obj->product_code.'</span></p>';
+              echo '<p>Description: <span>'.$obj->product_desc.'</span></p>';
+              echo '<p>Units Available: <span>'.$obj->qty.'</span></p>';
+              echo '<p>Price (Per Unit): <span>'.$currency.$obj->price.'</span></p>';
+
+
+
+              if($obj->qty > 0){
+                echo '<p><a href="update-cart.php?action=add&id='.$obj->id.'"><input class="add" type="submit" value="Add To Cart"/></a></p>';
+              }
+              else {
+                echo 'Out Of Stock!';
+              }
+              echo '</div>';
+
+              $i++;
+            }
+
+          }
+
+          $_SESSION['product_id'] = $product_id;
+
+
+          echo '</div>';
+          echo '</div>';
+            echo '</div>';
+              echo '</div>';
+
+          ?>
     <!-- Footer -->
     <?php include('assets/footer.html') ?>
     <!-- Scripts  -->
