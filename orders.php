@@ -91,7 +91,6 @@ include 'config.php';
               //echo '<img src="images/products/sports_band.jpg">';
               //echo '</div>';
               echo '<p><hr></p>';
-
             }
           }
         ?>

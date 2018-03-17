@@ -36,9 +36,10 @@ if($result){
     }
   }
 }
+
 if($result1){
 
-  if($obj = $result->fetch_object()) {
+  if($obj = $result1->fetch_object()) {
 
     switch($action) {
 
@@ -58,7 +59,7 @@ if($result1){
 }
 if($result2){
 
-  if($obj = $result->fetch_object()) {
+  if($obj = $result2->fetch_object()) {
 
     switch($action) {
 

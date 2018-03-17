@@ -33,7 +33,7 @@ if(session_id() == '' || !isset($_SESSION)){
     margin: auto;
     padding: 0;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
@@ -54,7 +54,7 @@ if(session_id() == '' || !isset($_SESSION)){
 
 /* The Close Button */
 .close {
-    color: white;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -105,9 +105,6 @@ if(session_id() == '' || !isset($_SESSION)){
             <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="products.php">Products</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="orders.php">My Orders</a>
           </li>
           <li class="nav-item">
@@ -117,9 +114,10 @@ if(session_id() == '' || !isset($_SESSION)){
               <a class="dropbtn" href="featured.php">Collection</a>
                 <div class="dropdown-content">
                   <a href="watch.php">watch</a>
+                  <a href="bags.php">bags</a>
                   <a href="camera.php">camera</a>
-                  <a href="#">mens clothing</a>
-                  <a href="#">womens clothing</a>
+                  <a href="mens.php">mens clothing</a>
+                  <a href="womens.php">womens clothing</a>
                 </div>
           </li>
         </ul>
@@ -165,10 +163,10 @@ if(session_id() == '' || !isset($_SESSION)){
       </div>
       <div class="modal-body">
         <div class="image-conten">
-          <img width="400px" height="350px" src="img/watch-1.jpeg" alt="sample11" />
+          <img width="400px" height="350px" style="object-fit: cover;"src="img/watch-1.jpeg" alt="sample11" />
           <div class="text-holder">
             <div>
-              <!-- <h2><i class="fab fa-instagram"></i></h2></div> -->
+    <p><a href="update-cart.php?action=add&id=1"><input class="add" type="submit" value="Add To Cart"/></a></p>';
             <div>
               <p>{{price}}</p>
             </div>
@@ -180,9 +178,7 @@ if(session_id() == '' || !isset($_SESSION)){
         <!-- <h3>Modal Footer</h3> -->
       </div>
     </div>
-
   </div>
-
 
 
   <script>

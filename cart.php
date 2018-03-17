@@ -34,21 +34,19 @@ include 'config.php';
             <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="products.php">Products</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="orders.php">My Orders</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
           <li class="dropdown">
-              <button class="dropbtn">Collection</button>
+              <a class="dropbtn" href="featured.php">Collection</a>
                 <div class="dropdown-content">
-                  <a href="#">watch</a>
-                  <a href="#">camera</a>
-                  <a href="#">mens clothing</a>
-                  <a href="#">womens clothing</a>
+                  <a href="watch.php">watch</a>
+                  <a href="bags.php">bags</a>
+                  <a href="camera.php">camera</a>
+                  <a href="mens.php">mens clothing</a>
+                  <a href="womens.php">womens clothing</a>
                 </div>
           </li>
         </ul>
@@ -133,7 +131,7 @@ include 'config.php';
             echo '<td>'.$total.'</td>';
           echo '</tr>';
           echo '<tr>';
-              echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Empty Cart</a><a href="products.php" class="button [secondary success alert]">Continue Shopping</a>';
+              echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Empty Cart</a><a href="featured.php" class="button [secondary success alert]">Continue Shopping</a>';
               if(isset($_SESSION['username'])) {
                 echo '<a href="orders-update.php"><button style="float:right;">COD</button></a>';
               }
