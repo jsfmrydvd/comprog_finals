@@ -4,7 +4,6 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 include 'config.php';
 ?>
 
-
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
@@ -32,21 +31,19 @@ include 'config.php';
             <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="products.php">Products</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="orders.php">My Orders</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
           <li class="dropdown">
-              <button class="dropbtn">Collection</button>
+              <a class="dropbtn" href="featured.php">Collection</a>
                 <div class="dropdown-content">
-                  <a href="#">watch</a>
-                  <a href="#">camera</a>
-                  <a href="#">mens clothing</a>
-                  <a href="#">womens clothing</a>
+                  <a href="watch.php">watch</a>
+                  <a href="bags.php">bags</a>
+                  <a href="camera.php">camera</a>
+                  <a href="mens.php">mens clothing</a>
+                  <a href="womens.php">womens clothing</a>
                 </div>
           </li>
         </ul>
@@ -61,17 +58,17 @@ include 'config.php';
 <div id="content">
   <div class="container" style="padding: 0;">
     <div class="row d-flex justify-content-around">
-      <div class="box-content">
-        <div class="image-holder">
+      <div class="box-content" ng-controller="loginCtrl">
+        <div class="image-holder" onclick="window.location.href='watch.php';">
           <img src="img/collection-1.jpg" alt="First slide">
           <div class="text-holder text-center">
             <h2>WATCH</h2>
-            <a href="#" class="shop-btn">6 PRODUCTS</a>
+            <a href="watch.php" class="shop-btn">6 PRODUCTS</a>
           </div>
         </div>
       </div>
       <div class="box-content">
-        <div class="image-holder">
+        <div class="image-holder" onclick="window.location.href='bags.php';">
           <img src="img/collection-2.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>BAGS</h2>
@@ -80,11 +77,29 @@ include 'config.php';
         </div>
       </div>
       <div class="box-content">
-        <div class="image-holder">
+        <div class="image-holder" onclick="window.location.href='camera.php';" >
           <img src="img/collection-3.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>CAMERA</h2>
-            <a href="#" class="shop-btn">3 PRODUCTS</a>
+            <a href="camera.php" class="shop-btn">4 PRODUCTS</a>
+          </div>
+        </div>
+      </div>
+      <div class="box-content">
+        <div class="image-holder" onclick="window.location.href='camera.php';" >
+          <img src="img/carousel-1.jpg" alt="First slide">
+          <div class="text-holder text-center">
+            <h2>MENS</h2>
+            <a href="camera.php" class="shop-btn">5 PRODUCTS</a>
+          </div>
+        </div>
+      </div>
+      <div class="box-content">
+        <div class="image-holder" onclick="window.location.href='camera.php';" >
+          <img src="img/carousel-three.jpeg" alt="First slide">
+          <div class="text-holder text-center">
+            <h2>WOMENS</h2>
+            <a href="camera.php" class="shop-btn">6 PRODUCTS</a>
           </div>
         </div>
       </div>

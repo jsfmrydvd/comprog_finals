@@ -34,21 +34,19 @@ include 'config.php';
             <a class="nav-link" href="about.php">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="products.php">Products</a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" href="orders.php">My Orders</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact</a>
           </li>
           <li class="dropdown">
-              <button class="dropbtn">Collection</button>
+              <a class="dropbtn" href="featured.php">Collection</a>
                 <div class="dropdown-content">
-                  <a href="#">watch</a>
-                  <a href="#">camera</a>
-                  <a href="#">mens clothing</a>
-                  <a href="#">womens clothing</a>
+                  <a href="watch.php">watch</a>
+                  <a href="bags.php">bags</a>
+                  <a href="camera.php">camera</a>
+                  <a href="mens.php">mens clothing</a>
+                  <a href="womens.php">womens clothing</a>
                 </div>
           </li>
         </ul>
@@ -78,11 +76,42 @@ include 'config.php';
             foreach($_SESSION['cart'] as $product_id => $quantity) {
 
             $result = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, qty, price FROM products WHERE id = ".$product_id);
-
+            $result1 = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, qty, price FROM camera WHERE id = ".$product_id);
+            $result2 = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, qty, price FROM watch WHERE id = ".$product_id);
 
             if($result){
 
               while($obj = $result->fetch_object()) {
+                $cost = $obj->price * $quantity; //work out the line cost
+                $total = $total + $cost; //add to the total cost
+
+                echo '<tr>';
+                echo '<td><img width="100px" height="100px" src="img/'.$obj->product_img_name.'"/></td>';
+                echo '<td>'.$obj->product_code.'</td>';
+                echo '<td>'.$obj->product_name.'</td>';
+                echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';
+                echo '<td>'.$cost.'</td>';
+                echo '</tr>';
+              }
+            }
+            if($result1){
+
+              while($obj = $result1->fetch_object()) {
+                $cost = $obj->price * $quantity; //work out the line cost
+                $total = $total + $cost; //add to the total cost
+
+                echo '<tr>';
+                echo '<td><img width="100px" height="100px" src="img/'.$obj->product_img_name.'"/></td>';
+                echo '<td>'.$obj->product_code.'</td>';
+                echo '<td>'.$obj->product_name.'</td>';
+                echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';
+                echo '<td>'.$cost.'</td>';
+                echo '</tr>';
+              }
+            }
+            if($result2){
+
+              while($obj = $result2->fetch_object()) {
                 $cost = $obj->price * $quantity; //work out the line cost
                 $total = $total + $cost; //add to the total cost
 
@@ -102,7 +131,7 @@ include 'config.php';
             echo '<td>'.$total.'</td>';
           echo '</tr>';
           echo '<tr>';
-              echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Empty Cart</a><a href="products.php" class="button [secondary success alert]">Continue Shopping</a>';
+              echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Empty Cart</a><a href="featured.php" class="button [secondary success alert]">Continue Shopping</a>';
               if(isset($_SESSION['username'])) {
                 echo '<a href="orders-update.php"><button style="float:right;">COD</button></a>';
               }
