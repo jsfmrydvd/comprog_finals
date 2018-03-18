@@ -10,7 +10,7 @@ if(isset($_SESSION['cart'])) {
 
   foreach($_SESSION['cart'] as $product_id => $quantity) {
 
-    $result = $mysqli->query("SELECT * FROM products WHERE id = ".$product_id);
+    $result = $mysqli->query("SELECT * FROM bags WHERE id = ".$product_id);
     $result1 = $mysqli->query("SELECT * FROM camera WHERE id = ".$product_id);
     $result2 = $mysqli->query("SELECT * FROM watch WHERE id = ".$product_id);
 
@@ -28,7 +28,7 @@ if(isset($_SESSION['cart'])) {
 
         if($query){
           $newqty = $obj->qty - $quantity;
-          if($mysqli->query("UPDATE products SET qty = ".$newqty." WHERE id = ".$product_id)){
+          if($mysqli->query("UPDATE bags SET qty = ".$newqty." WHERE id = ".$product_id)){
 
           }
         }
