@@ -12,9 +12,9 @@ $action = $_GET['action'];
 if($action === 'empty')
   unset($_SESSION['cart']);
 
-$result = $mysqli->query("SELECT qty FROM products WHERE id = ".$product_id);
-$result1 = $mysqli->query("SELECT qty FROM camera WHERE id = ".$product_id);
-$result2 = $mysqli->query("SELECT qty FROM watch WHERE id = ".$product_id);
+$result = $mysqli->query("SELECT qty FROM camera WHERE id = ".$product_id);
+$result1 = $mysqli->query("SELECT qty FROM watch WHERE id = ".$product_id);
+$result2 = $mysqli->query("SELECT qty FROM bags WHERE id = ".$product_id);
 
 if($result){
 

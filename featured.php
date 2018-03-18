@@ -60,7 +60,7 @@ include 'config.php';
     <div class="row d-flex justify-content-around">
       <div class="box-content" ng-controller="loginCtrl">
         <div class="image-holder" onclick="window.location.href='watch.php';">
-          <img src="img/collection-1.jpg" alt="First slide">
+          <img src="img/watch-4.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>WATCH</h2>
             <a href="watch.php" class="shop-btn">6 PRODUCTS</a>
@@ -69,7 +69,7 @@ include 'config.php';
       </div>
       <div class="box-content">
         <div class="image-holder" onclick="window.location.href='bags.php';">
-          <img src="img/collection-2.jpeg" alt="First slide">
+          <img src="img/collection-5.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>BAGS</h2>
             <a href="#" class="shop-btn">12 products</a>
@@ -78,7 +78,7 @@ include 'config.php';
       </div>
       <div class="box-content">
         <div class="image-holder" onclick="window.location.href='camera.php';" >
-          <img src="img/collection-3.jpeg" alt="First slide">
+          <img src="img/collection-4.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>CAMERA</h2>
             <a href="camera.php" class="shop-btn">4 PRODUCTS</a>
@@ -87,7 +87,7 @@ include 'config.php';
       </div>
       <div class="box-content">
         <div class="image-holder" onclick="window.location.href='camera.php';" >
-          <img src="img/carousel-1.jpg" alt="First slide">
+          <img src="img/collection-2.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>MENS</h2>
             <a href="camera.php" class="shop-btn">5 PRODUCTS</a>
@@ -96,7 +96,7 @@ include 'config.php';
       </div>
       <div class="box-content">
         <div class="image-holder" onclick="window.location.href='camera.php';" >
-          <img src="img/carousel-three.jpeg" alt="First slide">
+          <img src="img/collection-1.jpg" alt="First slide">
           <div class="text-holder text-center">
             <h2>WOMENS</h2>
             <a href="camera.php" class="shop-btn">6 PRODUCTS</a>

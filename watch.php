@@ -18,7 +18,7 @@ include 'config.php';
     </header>
     <!-- Navbar here -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-      <a class="navbar-brand mxauto" href="main.php">LOGO DITO HEHE</a>
+      <a class="navbar-brand mxauto" href="main.php">ITEAM STORE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
@@ -84,7 +84,7 @@ include 'config.php';
 
               echo '<div class="image-content-products">';
               echo '<h3>'.$obj->product_name.'</h3>';
-              echo '<img src="img/'.$obj->product_img_name.'"/>';
+              echo '<img src="img/watch/'.$obj->product_img_name.'"/>';
               echo '<p>Product Code: <span>'.$obj->product_code.'</span></p>';
               echo '<p>Description: <span>'.$obj->product_desc.'</span></p>';
               echo '<p>Units Available: <span>'.$obj->qty.'</span></p>';
