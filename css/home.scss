@@ -111,7 +111,7 @@
       }
 
       &:hover {
-        color: pink;
+        color: #d2a48a;
         transition: ease 0.2s ease;
       }
     }
@@ -256,11 +256,11 @@
 .section-carousel {
   .carousel-indicators {
     li {
-      height: 12px;
-      margin-left: 2px;
+      height: 1px;
+      margin-left: 5px;
       margin-right: 5px;
       position: relative;
-      width: 15px;
+      width: 50px;
     }
   }
 
@@ -375,9 +375,8 @@
 .carousel-caption.second {
   animation: flip 1.5s;
   animation-fill-mode: forwards;
-  top: 15%;
+  top: 8%;
   transform: translate(0%, 0vh);
-
   .alt-font {
     animation-timing-function: ease;
     font-family: "Dancing Script", sans-serif;
@@ -658,8 +657,9 @@
       h2 {
         font-family: sans-serif;
         font-size: 1em;
-        font-weight: 700;
+        font-weight: 500;
         text-transform: uppercase;
+        letter-spacing: 2px;
       }
     }
   }
@@ -858,7 +858,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  height: 50vh;
+  height: 70vh;
   max-width: 100%;
   width: 100%;
 
@@ -866,13 +866,14 @@ a {
     left: 50%;
     text-align: center;
     top: 54%;
-    transform: translate(0%, 17vh);
+    transform: translate(0%, 30vh);
 
     p {
       color: white;
       font-family: Raleway;
       font-size: 30px;
       font-weight: 300;
+      letter-spacing: 2px;
     }
   }
 }
@@ -1006,9 +1007,10 @@ footer {
       h2 {
         font-family: sans-serif;
         font-size: 1em;
-        font-weight: 700;
+        font-weight: 500;
         text-align: center !important;
         text-transform: uppercase;
+        letter-spacing: 2px;
       }
     }
   }
@@ -1342,9 +1344,11 @@ footer {
       h2 {
         font-family: sans-serif;
         font-size: 1em;
-        font-weight: 700;
+        font-weight: 500;
         text-align: center !important;
         text-transform: uppercase;
+        letter-spacing: 2px;
+
       }
     }
 
@@ -1446,13 +1450,15 @@ footer {
   }
 
   .add {
-    background-color: rgba(0,0,0,0.69);
-    border: none;
     clear: both;
-    color: #fff;
+    background: transparent;
+    color: Black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: 1px solid black;
     cursor: pointer;
     font-size: 0.8em;
-    font-weight: 400;
+    font-weight: 500;
     margin: 10px 0;
     padding: 7px 10px;
 
@@ -1711,51 +1717,69 @@ footer {
     margin: auto;
     padding: 0;
     position: relative;
-    width: 50%;
+    width: 70%;
+    border-radius: 0;
 
     .gallery-content {
-      .close {
-        color: black;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-
-        &:focus,
-        &:hover {
-          color: #000;
-          cursor: pointer;
-          text-decoration: none;
-        }
-      }
-
+      padding: 0;
       img {
         height: auto;
         object-fit: cover;
         width: 100%;
+        margin: 20px;
       }
     }
     .cart-button {
-      display: block;
-      margin: auto;
-      padding: 20px;
-      .add {
-        background-color: rgba(0,0,0,0.69);
-        border: none;
-        clear: both;
-        color: #fff;
-        cursor: pointer;
-        font-size: 0.8em;
-        font-weight: 400;
-        margin: 10px 0;
-        padding: 7px 10px;
 
-        &:hover {
-          background-color: black;
-          color: white;
-          transition: 200ms ease-in-out;
+      .content-modal {
+        a {
+          text-decoration: none;
+        }
+        .add {
+          clear: both;
+          cursor: pointer;
+          font-size: 0.8em;
+          font-weight: 400;
+          margin: 10px 0;
+          padding: 15px 15px;
+          text-transform: uppercase;
+          display: block;
+          margin: auto;
+          color: black;
+          border: 1px solid black;
+          letter-spacing: 2px;
+          background: transparent;
+
+          &:hover {
+            background-color: black;
+            color: white;
+            transition: 200ms ease-in-out;
+          }
         }
       }
+
+      .button {
+        height: 30px;
+        .close {
+          color: black;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+          text-align: right;
+          margin-left: 10px;
+
+
+          &:focus,
+          &:hover {
+            color: #000;
+            cursor: pointer;
+            text-decoration: none;
+          }
+        }
+      }
+
     }
+
   }
 }
 @-webkit-keyframes animatetop {
