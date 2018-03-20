@@ -55,6 +55,8 @@ if(session_id() == '' || !isset($_SESSION)){
         </ul>
       </div>
     </nav>
+
+
   <!-- Carousel Section -->
   <?php include('assets/carousel.html') ?>
   <!-- collection of items under carousel -->
