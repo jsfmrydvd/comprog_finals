@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 21, 2018 at 12:49 PM
+-- Generation Time: Mar 21, 2018 at 05:18 PM
 -- Server version: 5.7.21-log
 -- PHP Version: 7.1.8
 
@@ -45,7 +45,7 @@ CREATE TABLE `bags` (
 INSERT INTO `bags` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
 (23, 'bag-1a', 'Bag-1', 'bag', 'bag-1.jpeg', 18, '5000.00'),
 (24, 'bag-2a', 'Bag-2', 'bag', 'bag-2.jpeg', 11, '2600.00'),
-(25, 'bag-3a', 'Bag-3', 'bag', 'bag-3.jpg', 19, '1000.00'),
+(25, 'bag-3a', 'Bag-3', 'bag', 'bag-3.jpg', 16, '1000.00'),
 (26, 'bag-4a', 'Bag-4', 'bag', 'bag-4.jpeg', 12, '4000.00'),
 (27, 'bag-5a', 'Bag-5', 'bag', 'bag-5.jpeg', 23, '6000.00');
 
@@ -70,12 +70,12 @@ CREATE TABLE `camera` (
 --
 
 INSERT INTO `camera` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
-(19, 'c1', 'cam1', 'camera', 'featured-2.jpeg', 19, '10000.00'),
-(20, 'c2', 'cam2', 'camera', 'camera-2.jpeg', 10, '2000.00'),
-(21, 'c3', 'cam3', 'camera', 'camera-1.jpeg', 18, '5000.00'),
-(22, 'c4', 'cam4', 'camera', 'featured-3.jpg', 5, '5603.00'),
-(38, 'c5', 'cam5', 'camera', 'camera-3.jpeg', 12, '7000.00'),
-(39, 'c6', 'cam6', 'camera', 'camera-4.jpeg', 22, '3333.00');
+(19, 'c1', 'cam1', 'camera', 'slr-1.jpeg', 18, '10000.00'),
+(20, 'c2', 'cam2', 'camera', 'slr-2.jpg', 9, '2000.00'),
+(21, 'c3', 'cam3', 'camera', 'slr-3.jpeg', 18, '5000.00'),
+(22, 'c4', 'cam4', 'camera', 'slr-4.jpeg', 5, '5603.00'),
+(38, 'c5', 'cam5', 'camera', 'slr-5.jpeg', 10, '7000.00'),
+(39, 'c6', 'cam6', 'camera', 'slr-6.jpeg', 21, '3333.00');
 
 -- --------------------------------------------------------
 
@@ -131,7 +131,15 @@ INSERT INTO `orders` (`id`, `product_code`, `product_name`, `product_desc`, `pri
 (1, 'w1', 'watch1', 'TEST', 5000, 1, 5000, '2018-03-17 06:02:09', 'root@gmail.com'),
 (2, 'w5', 'watch5', '11', 12321, 1, 12321, '2018-03-17 06:06:04', 'root@gmail.com'),
 (3, 'w6', 'watch6', '11', 11, 1, 11, '2018-03-18 06:31:56', 'root@gmail.com'),
-(4, 'c2', 'cam2', 'camera', 200, 1, 200, '2018-03-18 06:31:56', 'root@gmail.com');
+(4, 'c2', 'cam2', 'camera', 200, 1, 200, '2018-03-18 06:31:56', 'root@gmail.com'),
+(5, 'w4', 'watch4', 'watch', 560, 5, 2800, '2018-03-21 15:09:30', 'root@gmail.com'),
+(6, 'w6', 'watch6', 'watch', 300, 3, 900, '2018-03-21 15:09:30', 'root@gmail.com'),
+(7, 'bag-3a', 'Bag-3', 'bag', 1000, 3, 3000, '2018-03-21 15:09:30', 'root@gmail.com'),
+(8, 'w3', 'watch3', 'watch', 1000, 1, 1000, '2018-03-21 15:21:25', 'root@gmail.com'),
+(9, 'c5', 'cam5', 'camera', 7000, 2, 14000, '2018-03-21 16:14:03', 'root@gmail.com'),
+(10, 'c6', 'cam6', 'camera', 3333, 1, 3333, '2018-03-21 16:14:03', 'root@gmail.com'),
+(11, 'c1', 'cam1', 'camera', 10000, 1, 10000, '2018-03-21 16:14:03', 'root@gmail.com'),
+(12, 'c2', 'cam2', 'camera', 2000, 1, 2000, '2018-03-21 16:14:03', 'root@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -211,10 +219,10 @@ CREATE TABLE `watch` (
 INSERT INTO `watch` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
 (13, 'w1', 'watch1', 'watch', 'watch-1.jpeg', 18, '5000.00'),
 (14, 'w2', 'watch2', 'watch', 'watch-2.jpeg', 11, '200.00'),
-(15, 'w3', 'watch3', 'watch', 'watch-3.jpeg', 19, '1000.00'),
-(16, 'w4', 'watch4', 'watch', 'watch-4.jpeg', 5, '560.00'),
+(15, 'w3', 'watch3', 'watch', 'watch-3.jpeg', 18, '1000.00'),
+(16, 'w4', 'watch4', 'watch', 'watch-4.jpeg', 0, '560.00'),
 (17, 'w5', 'watch5', 'watch', 'watch-5.jpeg', 4, '1200.00'),
-(18, 'w6', 'watch6', 'watch', 'watch-6.jpeg', 10, '300.00');
+(18, 'w6', 'watch6', 'watch', 'watch-6.jpeg', 7, '300.00');
 
 -- --------------------------------------------------------
 
@@ -317,7 +325,7 @@ ALTER TABLE `mens`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `users`
 --
