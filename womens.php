@@ -1,6 +1,5 @@
 <?php
 
-//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 include 'config.php';
 ?>
@@ -18,6 +17,7 @@ include 'config.php';
     </header>
     <!-- Navbar here -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+      <a class="image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart"></i></a>
       <a class="navbar-brand mxauto" href="main.php">ITEAM STORE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -49,14 +49,11 @@ include 'config.php';
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>Cart</a>
+            <a class="nav-link image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart" data-modal="modalCart"></i>Cart</a>
           </li>
         </ul>
       </div>
     </nav>
-
-
-
     <div class="featured-items-collection products">
       <div class="container">
         <div class="text-heading col-auto text-center">
@@ -72,26 +69,22 @@ include 'config.php';
           $product_id = array();
           $product_quantity = array();
 
-          $result = $mysqli->query('SELECT * FROM womens');
-          if($result === FALSE){
+          $womens = $mysqli->query('SELECT * FROM womens');
+          if($womens === FALSE){
             die(mysql_error());
           }
 
+          if($womens){
 
-          if($result){
-
-            while($obj = $result->fetch_object()) {
+            while($obj = $womens->fetch_object()) {
 
               echo '<div class="image-content-products">';
               echo '<h3>'.$obj->product_name.'</h3>';
-              echo '<img src="img/camera/'.$obj->product_img_name.'"/>';
+              echo '<img src="img/womens/'.$obj->product_img_name.'"/>';
               echo '<p>Product Code: <span>'.$obj->product_code.'</span></p>';
               echo '<p>Description: <span>'.$obj->product_desc.'</span></p>';
               echo '<p>Units Available: <span>'.$obj->qty.'</span></p>';
               echo '<p>Price (Per Unit): <span>'.$currency.$obj->price.'</span></p>';
-
-
-
               if($obj->qty > 0){
                 echo '<p><a href="update-cart.php?action=add&id='.$obj->id.'"><input class="add" type="submit" value="Add To Cart"/></a></p>';
               }
@@ -102,17 +95,12 @@ include 'config.php';
 
               $i++;
             }
-
           }
-
           $_SESSION['product_id'] = $product_id;
-
-
           echo '</div>';
           echo '</div>';
-            echo '</div>';
-              echo '</div>';
-
+          echo '</div>';
+          echo '</div>';
           ?>
     <!-- Footer -->
     <?php include('assets/footer.html') ?>

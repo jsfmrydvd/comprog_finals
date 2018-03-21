@@ -1,5 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <a class="navbar-brand mxauto" href="main.php">LOGO DITO HEHE</a>
+          <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>Cart</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
   <span class="navbar-toggler-icon"></span>
   </button>

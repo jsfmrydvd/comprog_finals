@@ -28,6 +28,7 @@ if(empty($_POST["fname"]) || empty($_POST["pwd"])) {
     <!-- Navbar here -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
       <!-- Logo or name-->
+      <a class="image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart"></i></a>
       <a class="navbar-brand mxauto" href="main.php">ITEAM STORE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -59,7 +60,7 @@ if(empty($_POST["fname"]) || empty($_POST["pwd"])) {
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>Cart</a>
+            <a class="nav-link image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart" data-modal="modalCart"></i>Cart</a>
           </li>
         </ul>
       </div>

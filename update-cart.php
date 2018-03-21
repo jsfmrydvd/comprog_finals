@@ -12,34 +12,15 @@ $action = $_GET['action'];
 if($action === 'empty')
   unset($_SESSION['cart']);
 
-$result = $mysqli->query("SELECT qty FROM camera WHERE id = ".$product_id);
-$result1 = $mysqli->query("SELECT qty FROM watch WHERE id = ".$product_id);
-$result2 = $mysqli->query("SELECT qty FROM bags WHERE id = ".$product_id);
+$camera = $mysqli->query("SELECT qty FROM camera WHERE id = ".$product_id);
+$watch = $mysqli->query("SELECT qty FROM watch WHERE id = ".$product_id);
+$bags = $mysqli->query("SELECT qty FROM bags WHERE id = ".$product_id);
+$mens = $mysqli->query("SELECT qty FROM mens WHERE id = ".$product_id);
+$womens = $mysqli->query("SELECT qty FROM womens WHERE id = ".$product_id);
 
-if($result){
+if($camera){
 
-  if($obj = $result->fetch_object()) {
-
-    switch($action) {
-
-      case "add":
-      if($_SESSION['cart'][$product_id]+1 <= $obj->qty)
-        $_SESSION['cart'][$product_id]++;
-      break;
-
-      case "remove":
-      $_SESSION['cart'][$product_id]--;
-      if($_SESSION['cart'][$product_id] == 0)
-        unset($_SESSION['cart'][$product_id]);
-        break;
-
-    }
-  }
-}
-
-if($result1){
-
-  if($obj = $result1->fetch_object()) {
+  if($obj = $camera->fetch_object()) {
 
     switch($action) {
 
@@ -57,9 +38,70 @@ if($result1){
     }
   }
 }
-if($result2){
 
-  if($obj = $result2->fetch_object()) {
+if($watch){
+
+  if($obj = $watch->fetch_object()) {
+
+    switch($action) {
+
+      case "add":
+      if($_SESSION['cart'][$product_id]+1 <= $obj->qty)
+        $_SESSION['cart'][$product_id]++;
+      break;
+
+      case "remove":
+      $_SESSION['cart'][$product_id]--;
+      if($_SESSION['cart'][$product_id] == 0)
+        unset($_SESSION['cart'][$product_id]);
+        break;
+
+    }
+  }
+}
+if($bags){
+
+  if($obj = $bags->fetch_object()) {
+
+    switch($action) {
+
+      case "add":
+      if($_SESSION['cart'][$product_id]+1 <= $obj->qty)
+        $_SESSION['cart'][$product_id]++;
+      break;
+
+      case "remove":
+      $_SESSION['cart'][$product_id]--;
+      if($_SESSION['cart'][$product_id] == 0)
+        unset($_SESSION['cart'][$product_id]);
+        break;
+
+    }
+  }
+}
+if($mens){
+
+  if($obj = $mens->fetch_object()) {
+
+    switch($action) {
+
+      case "add":
+      if($_SESSION['cart'][$product_id]+1 <= $obj->qty)
+        $_SESSION['cart'][$product_id]++;
+      break;
+
+      case "remove":
+      $_SESSION['cart'][$product_id]--;
+      if($_SESSION['cart'][$product_id] == 0)
+        unset($_SESSION['cart'][$product_id]);
+        break;
+
+    }
+  }
+}
+if($womens){
+
+  if($obj = $womens->fetch_object()) {
 
     switch($action) {
 

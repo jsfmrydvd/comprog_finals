@@ -2,6 +2,7 @@
 
 if(session_id() == '' || !isset($_SESSION)){
   session_start();
+  include 'config.php';
 }
 ?>
 <!DOCTYPE html>
@@ -17,8 +18,10 @@ if(session_id() == '' || !isset($_SESSION)){
       <?php include('assets/header-primary.php') ?>
     </header>
     <!-- Navbar here -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black" ng-controller="loginCtrl">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black navbar-fixed-top" ng-controller="loginCtrl">
       <!-- Logo or name-->
+      <!-- cart -->
+      <a class="image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart"></i></a>
       <a class="navbar-brand mxauto" href="main.php">{{logo}}</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -50,7 +53,7 @@ if(session_id() == '' || !isset($_SESSION)){
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>Cart</a>
+            <a class="nav-link image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart" data-modal="modalCart"></i>Cart</a>
           </li>
         </ul>
       </div>
@@ -74,6 +77,7 @@ if(session_id() == '' || !isset($_SESSION)){
   <!-- Footer -->
   <?php include('assets/footer.html') ?>
   <!-- modal content -->
+  <?php include('assets/cart-modal.php') ?>
   <?php include('assets/modal.html') ?>
   <!-- Scripts  -->
   <?php include('assets/scripts.html') ?>
