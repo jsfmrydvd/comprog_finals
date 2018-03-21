@@ -34,9 +34,6 @@ include 'config.php';
         <li class="nav-item">
           <a class="nav-link" href="about.php">About</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="products.php">Products</a>
-        </li>
         <li class="nav-item active">
           <a class="nav-link" href="orders.php">My Orders</a>
         </li>
@@ -46,10 +43,11 @@ include 'config.php';
         <li class="dropdown">
             <button class="dropbtn">Collection</button>
               <div class="dropdown-content">
-                <a href="#">watch</a>
-                <a href="#">camera</a>
-                <a href="#">mens clothing</a>
-                <a href="#">womens clothing</a>
+                <a href="watch.php">watch</a>
+                <a href="bags.php">bags</a>
+                <a href="camera.php">camera</a>
+                <a href="mens.php">mens clothing</a>
+                <a href="womens.php">womens clothing</a>
               </div>
         </li>
       </ul>
