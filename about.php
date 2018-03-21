@@ -1,7 +1,8 @@
 <?php
 
-if(session_id() == '' || !isset($_SESSION)){session_start();}
-
+if(session_id() == '' || !isset($_SESSION)){session_start();
+  include 'config.php';
+}
 
 ?>
 <!DOCTYPE html>
@@ -57,6 +58,8 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </nav>
     <!-- Footer -->
     <?php include('assets/footer.html') ?>
+    <!-- cart modal -->
+    <?php include('assets/cart-modal.php') ?>
     <!-- Scripts  -->
     <?php include('assets/scripts.html') ?>
   </body>

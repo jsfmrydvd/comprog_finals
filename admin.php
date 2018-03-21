@@ -174,6 +174,8 @@ include 'config.php';
 
             <!-- Footer -->
             <?php include('assets/footer.html') ?>
+            <!-- cart modal -->
+            <?php include('assets/cart-modal.php') ?>
             <!-- Scripts -->
             <?php include('assets/scripts.html') ?>
   </body>

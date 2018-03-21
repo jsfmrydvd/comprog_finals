@@ -9,6 +9,7 @@ $city = $_POST["city"];
 $pin = $_POST["pin"];
 $email = $_POST["email"];
 $pwd = $_POST["pwd"];
+$repwd = $_POST["repwd"];
   	// $pwd = password_hash($pwd, PASSWORD_DEFAULT);
   	// $query = "INSERT INTO users (fname, lname, address, city, pin, email, password) VALUES('$fname', '$lname', '$address', '$city', $pin, '$email', '$pwd')";
   	// if(mysqli_query($mysqli,$query)) {
@@ -30,10 +31,23 @@ $pwd = $_POST["pwd"];
 // $query = "INSERT INTO users (fname, lname, address, city, pin, email, password) VALUES('$fname', '$lname', '$address', '$city', $pin, '$email', '$pwd')";
 // if(mysqli_query($mysqli,$query)) {
 // 	echo ' <script>alert("Registration Done")</script>';
-// }
+	// if($pwd == $repwd){
+	// 	$pwd = password_hash($pwd, PASSWORD_DEFAULT);
+	//   $result = $mysqli->query("INSERT INTO users (fname, lname, address, city, pin, email, password) VALUES('$fname', '$lname', '$address', '$city', $pin, '$email', '$pwd')");
+	//
+	// }
+	// else {
+	// 	echo ' wrong password';
+	// }
+
 $mysqli->query("INSERT INTO users (fname, lname, address, city, pin, email, password) VALUES('$fname', '$lname', '$address', '$city', $pin, '$email', '$pwd')");
 	echo 'Data inserted';
 	echo '<br/>';
+	if($pwd!=){
+	  $query = $mysqli->query('UPDATE users SET password ="'. $pwd .'" WHERE id ='.$_SESSION['id']);
+	  if($query){
+	  }
+	}
 
 
 header ("location:login.php");
