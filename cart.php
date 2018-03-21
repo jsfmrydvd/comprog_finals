@@ -1,10 +1,8 @@
 <?php
 
-//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 include 'config.php';
-
 
 ?>
 <!DOCTYPE html>
@@ -20,6 +18,7 @@ include 'config.php';
       <?php include('assets/header-primary.php') ?>
     </header>
     <!-- Navbar here -->
+    <a class="image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart"></i></a>
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
       <a class="navbar-brand mxauto" href="main.php">ITEAM STORE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +51,7 @@ include 'config.php';
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="cart.php"><i class="fas fa-shopping-cart"></i>Cart</a>
+            <a class="nav-link image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart" data-modal="modalCart"></i>Cart</a>
           </li>
         </ul>
       </div>
@@ -77,7 +76,9 @@ include 'config.php';
 
             $camera = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, qty, price FROM camera WHERE id = ".$product_id);
             $watch = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, qty, price FROM watch WHERE id = ".$product_id);
-            $result = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, qty, price FROM bags WHERE id = ".$product_id);
+            $bags = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, qty, price FROM bags WHERE id = ".$product_id);
+            $mens = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, qty, price FROM mens WHERE id = ".$product_id);
+            $womens = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, qty, price FROM womens WHERE id = ".$product_id);
 
 
             if($camera){
@@ -110,9 +111,9 @@ include 'config.php';
                 echo '</tr>';
               }
             }
-            if($result){
+            if($bags){
 
-              while($obj = $result->fetch_object()) {
+              while($obj = $bags->fetch_object()) {
                 $cost = $obj->price * $quantity; //work out the line cost
                 $total = $total + $cost; //add to the total cost
 
@@ -125,11 +126,41 @@ include 'config.php';
                 echo '</tr>';
               }
             }
+            if($mens){
+
+              while($obj = $mens->fetch_object()) {
+                $cost = $obj->price * $quantity; //work out the line cost
+                $total = $total + $cost; //add to the total cost
+
+                echo '<tr>';
+                echo '<td><img width="100px" height="100px" src="img/mens/'.$obj->product_img_name.'"/></td>';
+                echo '<td>'.$obj->product_code.'</td>';
+                echo '<td>'.$obj->product_name.'</td>';
+                echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';
+                echo '<td>'.$cost.'</td>';
+                echo '</tr>';
+              }
+            }
+            if($womens){
+
+              while($obj = $womens->fetch_object()) {
+                $cost = $obj->price * $quantity; //work out the line cost
+                $total = $total + $cost; //add to the total cost
+
+                echo '<tr>';
+                echo '<td><img width="100px" height="100px" src="img/womens/'.$obj->product_img_name.'"/></td>';
+                echo '<td>'.$obj->product_code.'</td>';
+                echo '<td>'.$obj->product_name.'</td>';
+                echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';
+                echo '<td>'.$cost.'</td>';
+                echo '</tr>';
+              }
+            }
           }
           echo '<tr>';
-            echo '<td colspan="3" align="right">Total</td>';
-            echo '<td colspan="3" align="right">Total</td>';
-            echo '<td>'.$total.'</td>';
+          echo '<td colspan="3" align="right">Total</td>';
+          echo '<td colspan="3" align="right">Total</td>';
+          echo '<td>'.$total.'</td>';
           echo '</tr>';
           echo '<tr>';
               echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Empty Cart</a><a href="featured.php" class="button [secondary success alert]">Continue Shopping</a>';

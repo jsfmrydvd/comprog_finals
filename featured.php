@@ -18,6 +18,7 @@ include 'config.php';
     </header>
     <!-- Navbar here -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+      <a class="image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart"></i></a>
       <a class="navbar-brand mxauto" href="main.php">ITEAM STORE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -49,7 +50,7 @@ include 'config.php';
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>Cart</a>
+            <a class="nav-link image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart" data-modal="modalCart"></i>Cart</a>
           </li>
         </ul>
       </div>
@@ -72,7 +73,7 @@ include 'config.php';
           <img src="img/collection-5.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>BAGS</h2>
-            <a href="#" class="shop-btn">12 products</a>
+            <a href="bags.php" class="shop-btn">5 PRODUCTS</a>
           </div>
         </div>
       </div>
@@ -86,20 +87,20 @@ include 'config.php';
         </div>
       </div>
       <div class="box-content">
-        <div class="image-holder" onclick="window.location.href='camera.php';" >
-          <img src="img/collection-2.jpeg" alt="First slide">
+        <div class="image-holder" onclick="window.location.href='mens.php';" >
+          <img src="img/featured-mens.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>MENS</h2>
-            <a href="camera.php" class="shop-btn">5 PRODUCTS</a>
+            <a href="mens.php" class="shop-btn">5 PRODUCTS</a>
           </div>
         </div>
       </div>
       <div class="box-content">
-        <div class="image-holder" onclick="window.location.href='camera.php';" >
-          <img src="img/collection-1.jpg" alt="First slide">
+        <div class="image-holder" onclick="window.location.href='womens.php';" >
+          <img src="img/featured-womens.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>WOMENS</h2>
-            <a href="camera.php" class="shop-btn">6 PRODUCTS</a>
+            <a href="womens.php" class="shop-btn">4 PRODUCTS</a>
           </div>
         </div>
       </div>
