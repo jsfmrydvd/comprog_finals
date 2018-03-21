@@ -88,7 +88,7 @@ include 'config.php';
                 $total = $total + $cost; //add to the total cost
 
                 echo '<tr>';
-                echo '<td><img width="100px" height="100px" src="img/camera/'.$obj->product_img_name.'"/></td>';
+                echo '<td><img width="100px" height="100px" src="img/slr/'.$obj->product_img_name.'"/></td>';
                 echo '<td>'.$obj->product_code.'</td>';
                 echo '<td>'.$obj->product_name.'</td>';
                 echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';

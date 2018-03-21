@@ -20,7 +20,7 @@
                   echo ' <div class="container">';
                   echo ' <div class="row">';
                 echo ' <div class="col-md-12">';
-                    echo '<img style="object-fit: cover;width: 100%;height: auto;" src="img/camera/'.$obj->product_img_name.'"/>';
+                    echo '<img style="object-fit: cover;width: 100%;height: auto;" src="img/slr/'.$obj->product_img_name.'"/>';
                 echo '  </div>';
                   echo ' <div class="text-heading col-md-12">';
                 echo '<p>Code:<span>'.$obj->product_code.'</span></p>';
