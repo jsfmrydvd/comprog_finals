@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 18, 2018 at 09:59 AM
+-- Generation Time: Mar 21, 2018 at 12:49 PM
 -- Server version: 5.7.21-log
 -- PHP Version: 7.1.8
 
@@ -33,8 +33,8 @@ CREATE TABLE `bags` (
   `product_code` varchar(60) NOT NULL,
   `product_name` varchar(60) NOT NULL,
   `product_desc` tinytext NOT NULL,
-  `product_img_name` varchar(60) NOT NULL,
-  `qty` int(5) NOT NULL,
+  `product_img_name` varchar(255) NOT NULL,
+  `qty` int(255) NOT NULL,
   `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -44,8 +44,10 @@ CREATE TABLE `bags` (
 
 INSERT INTO `bags` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
 (23, 'bag-1a', 'Bag-1', 'bag', 'bag-1.jpeg', 18, '5000.00'),
-(24, 'bag-2a', 'Bag-2', 'bag', 'bag-2.jpeg', 11, '200.00'),
-(25, 'bag-3a', 'Bag-3', 'bag', 'bag-3.jpg', 19, '1000.00');
+(24, 'bag-2a', 'Bag-2', 'bag', 'bag-2.jpeg', 11, '2600.00'),
+(25, 'bag-3a', 'Bag-3', 'bag', 'bag-3.jpg', 19, '1000.00'),
+(26, 'bag-4a', 'Bag-4', 'bag', 'bag-4.jpeg', 12, '4000.00'),
+(27, 'bag-5a', 'Bag-5', 'bag', 'bag-5.jpeg', 23, '6000.00');
 
 -- --------------------------------------------------------
 
@@ -58,8 +60,8 @@ CREATE TABLE `camera` (
   `product_code` varchar(60) NOT NULL,
   `product_name` varchar(60) NOT NULL,
   `product_desc` tinytext NOT NULL,
-  `product_img_name` varchar(60) NOT NULL,
-  `qty` int(5) NOT NULL,
+  `product_img_name` varchar(255) NOT NULL,
+  `qty` int(255) NOT NULL,
   `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -68,38 +70,40 @@ CREATE TABLE `camera` (
 --
 
 INSERT INTO `camera` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
-(19, 'c1', 'cam1', 'camera', 'featured-2.jpeg', 19, '1000.00'),
-(20, 'c2', 'cam2', 'camera', 'camera-2.jpeg', 10, '200.00'),
+(19, 'c1', 'cam1', 'camera', 'featured-2.jpeg', 19, '10000.00'),
+(20, 'c2', 'cam2', 'camera', 'camera-2.jpeg', 10, '2000.00'),
 (21, 'c3', 'cam3', 'camera', 'camera-1.jpeg', 18, '5000.00'),
-(22, 'c4', 'cam4', 'camera', 'featured-3.jpg', 5, '560.00');
+(22, 'c4', 'cam4', 'camera', 'featured-3.jpg', 5, '5603.00'),
+(38, 'c5', 'cam5', 'camera', 'camera-3.jpeg', 12, '7000.00'),
+(39, 'c6', 'cam6', 'camera', 'camera-4.jpeg', 22, '3333.00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `clothing`
+-- Table structure for table `mens`
 --
 
-CREATE TABLE `clothing` (
+CREATE TABLE `mens` (
   `id` int(11) NOT NULL,
   `product_code` varchar(60) NOT NULL,
   `product_name` varchar(60) NOT NULL,
   `product_desc` tinytext NOT NULL,
-  `product_img_name` varchar(60) NOT NULL,
-  `qty` int(5) NOT NULL,
+  `product_img_name` varchar(255) NOT NULL,
+  `qty` int(255) NOT NULL,
   `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `clothing`
+-- Dumping data for table `mens`
 --
 
-INSERT INTO `clothing` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
-(1, '1a', 'asd', 'TEST', 'watch-1.jpeg', 18, '5000.00'),
-(2, '2a', 'IPSUM', 'T', 'watch-2.jpeg', 11, '200.00'),
-(3, '1as', 'DOLOR', 'T', 'watch-3.jpeg', 19, '1000.00'),
-(4, '3a', 'SIT', 'T', 'watch-4.jpeg', 5, '560.00'),
-(5, 'dw', 'asd', '11', 'watch-5.jpeg', 5, '12321.00'),
-(6, 'sd21', 'asd', '11', 'watch-6.jpeg', 1, '11.00');
+INSERT INTO `mens` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
+(28, 'mens-1a', 'Mens-1', 'clothing', 'mens-1.jpg', 18, '400.00'),
+(29, 'mens-2a', 'Mens-2', 'clothing', 'mens-2.jpeg', 13, '500.00'),
+(30, 'mens-3a', 'Mens-3', 'clothing', 'mens-3.jpeg', 19, '1000.00'),
+(31, 'mens-4a', 'Mens-4', 'clothing', 'mens-4.jpeg', 11, '560.00'),
+(32, 'mens-5a', 'Mens-5', 'clothing', 'mens-5.jpeg', 22, '1200.00'),
+(33, 'mens-6a', 'Mens-6', 'clothing', 'mens-6.jpeg', 12, '1110.00');
 
 -- --------------------------------------------------------
 
@@ -178,7 +182,11 @@ INSERT INTO `users` (`id`, `fname`, `lname`, `address`, `city`, `pin`, `email`, 
 (31, 'Jisefpogi', 'David', '172', 'Angeles', 33659, 'pogiko@gmail.com', 'pogikone', 'user'),
 (32, 'Josefpogi', 'Devid', 'I', 'Hs', 32649588, 'pogi@email.com', 'pogiko', 'user'),
 (33, 'asd111', 'asd11', '1', '1', 11, '55@gmail.com', 'hehe', 'user'),
-(34, 'April Joie', 'Arazo', 'address', 'city', 1998, 'apriljoie@yahoo.com', 'jhey2698', 'user');
+(34, 'April Joie', 'Arazo', 'address', 'city', 1998, 'apriljoie@yahoo.com', 'jhey2698', 'user'),
+(35, 'ginagawamu', 'mumu', '21231ax', 'asda', 1211, 'gege@gmail.com', 'password', 'user'),
+(36, 'gegewamu', 'gegemo', '234sks', 'asnasnd', 99292, 'gegi@gmail.com', 'password', 'user'),
+(37, 'anone', 'anonene', '223hjh', 'angelesba', 29329, 'tengi@gmail.com', 'password', 'user'),
+(38, 'jeje', 'jejee', '23kj2k', 'anshe', 29101, 'uu@gmail.com', 'password', 'user');
 
 -- --------------------------------------------------------
 
@@ -191,8 +199,8 @@ CREATE TABLE `watch` (
   `product_code` varchar(60) NOT NULL,
   `product_name` varchar(60) NOT NULL,
   `product_desc` tinytext NOT NULL,
-  `product_img_name` varchar(60) NOT NULL,
-  `qty` int(5) NOT NULL,
+  `product_img_name` varchar(255) NOT NULL,
+  `qty` int(255) NOT NULL,
   `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -207,6 +215,32 @@ INSERT INTO `watch` (`id`, `product_code`, `product_name`, `product_desc`, `prod
 (16, 'w4', 'watch4', 'watch', 'watch-4.jpeg', 5, '560.00'),
 (17, 'w5', 'watch5', 'watch', 'watch-5.jpeg', 4, '1200.00'),
 (18, 'w6', 'watch6', 'watch', 'watch-6.jpeg', 10, '300.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `womens`
+--
+
+CREATE TABLE `womens` (
+  `id` int(11) NOT NULL,
+  `product_code` varchar(60) NOT NULL,
+  `product_name` varchar(60) NOT NULL,
+  `product_desc` tinytext NOT NULL,
+  `product_img_name` varchar(255) NOT NULL,
+  `qty` int(255) NOT NULL,
+  `price` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `womens`
+--
+
+INSERT INTO `womens` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
+(34, 'womens-1a', 'Womens-1', 'Clothing', 'womens-1.jpeg', 18, '500.00'),
+(35, 'womens-2a', 'Womens-2', 'Clothing', 'womens-2.jpeg', 11, '800.00'),
+(36, 'womens-3a', 'Womens-3', 'Clothing', 'womens-3.jpeg', 19, '1000.00'),
+(37, 'womens-4a', 'Womens-4', 'Clothing', 'womens-4.jpeg', 21, '560.00');
 
 --
 -- Indexes for dumped tables
@@ -227,9 +261,9 @@ ALTER TABLE `camera`
   ADD UNIQUE KEY `product_code` (`product_code`);
 
 --
--- Indexes for table `clothing`
+-- Indexes for table `mens`
 --
-ALTER TABLE `clothing`
+ALTER TABLE `mens`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `product_code` (`product_code`);
 
@@ -254,6 +288,13 @@ ALTER TABLE `watch`
   ADD UNIQUE KEY `product_code` (`product_code`);
 
 --
+-- Indexes for table `womens`
+--
+ALTER TABLE `womens`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `product_code` (`product_code`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -261,16 +302,16 @@ ALTER TABLE `watch`
 -- AUTO_INCREMENT for table `bags`
 --
 ALTER TABLE `bags`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `camera`
 --
 ALTER TABLE `camera`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=778;
 --
--- AUTO_INCREMENT for table `clothing`
+-- AUTO_INCREMENT for table `mens`
 --
-ALTER TABLE `clothing`
+ALTER TABLE `mens`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `orders`
@@ -281,11 +322,16 @@ ALTER TABLE `orders`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 --
 -- AUTO_INCREMENT for table `watch`
 --
 ALTER TABLE `watch`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT for table `womens`
+--
+ALTER TABLE `womens`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
