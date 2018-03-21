@@ -56,6 +56,18 @@ include 'config.php';
       </div>
     </nav>
 <!-- new section -->
+<div class="featured-items-collection products" style="padding-top: 50px; padding-bottom: 0;">
+  <div class="container">
+    <div class="text-heading col-auto text-center">
+      <div class="text-holder">
+        <!-- heading -->
+        <h2>Collections</h2>
+            <hr />
+      </div>
+    </div>
+  </div>
+</div>
+</div>
 <div id="content">
   <div class="container" style="padding: 0;">
     <div class="row d-flex justify-content-around">
