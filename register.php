@@ -2,6 +2,7 @@
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 if (isset($_SESSION["username"])) {header ("location:index.php");}
+include 'config.php';
 
 
 ?>
@@ -140,6 +141,8 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
     </form>
     <!-- Footer -->
     <?php include('assets/footer.html') ?>
+    <!-- cart modal -->
+    <?php include('assets/cart-modal.php') ?>
     <!-- Scripts  -->
     <?php include('assets/scripts.html') ?>
   </body>

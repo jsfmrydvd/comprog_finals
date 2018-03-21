@@ -1,6 +1,7 @@
 <?php
 
 if(session_id() == '' || !isset($_SESSION)){session_start();}
+include 'config.php';
 
 ?>
 
@@ -66,6 +67,8 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
     </div>
     <!-- Footer -->
     <?php include('assets/footer.html') ?>
+    <!-- cart modal -->
+    <?php include('assets/cart-modal.php') ?>
     <!-- Scripts  -->
     <?php include('assets/scripts.html') ?>
   </body>

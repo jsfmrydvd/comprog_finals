@@ -77,8 +77,9 @@ if(session_id() == '' || !isset($_SESSION)){
   <!-- Footer -->
   <?php include('assets/footer.html') ?>
   <!-- modal content -->
-  <?php include('assets/cart-modal.php') ?>
   <?php include('assets/modal.html') ?>
+  <!-- cart modal -->
+  <?php include('assets/cart-modal.php') ?>
   <!-- Scripts  -->
   <?php include('assets/scripts.html') ?>
   </body>
