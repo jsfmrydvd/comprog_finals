@@ -83,7 +83,7 @@ include 'config.php';
 
               echo '<div class="image-content-products">';
               echo '<h3>'.$obj->product_name.'</h3>';
-              echo '<img src="img/camera/'.$obj->product_img_name.'"/>';
+              echo '<img src="img/slr/'.$obj->product_img_name.'"/>';
               echo '<p>Product Code: <span>'.$obj->product_code.'</span></p>';
               echo '<p>Description: <span>'.$obj->product_desc.'</span></p>';
               echo '<p>Units Available: <span>'.$obj->qty.'</span></p>';
