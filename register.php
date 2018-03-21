@@ -1,5 +1,4 @@
 <?php
-//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 if (isset($_SESSION["username"])) {header ("location:index.php");}
@@ -21,6 +20,7 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
     <!-- Navbar here -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-black">
       <!-- Logo or name-->
+      <a class="image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart"></i></a>
       <a class="navbar-brand mxauto" href="main.php">ITEAM STORE</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -52,7 +52,7 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
         </ul>
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i>Cart</a>
+            <a class="nav-link image-show cart" data-modal="modalCart"><i class="fas fa-shopping-cart" data-modal="modalCart"></i>Cart</a>
           </li>
         </ul>
       </div>
@@ -116,6 +116,14 @@ if (isset($_SESSION["username"])) {header ("location:index.php");}
             </div>
             <div class="col-md-12">
               <input type="password" id="right-label" name="pwd">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <label for="right-label" class="right inline">Password</label>
+            </div>
+            <div class="col-md-12">
+              <input type="password" id="right-label" name="repwd">
             </div>
           </div>
           <div class="row">

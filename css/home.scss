@@ -137,6 +137,9 @@
       width: 75px;
     }
   }
+  .cart {
+    display: none;
+  }
 
   .navbar-nav {
     .nav-item {
@@ -181,6 +184,9 @@
           color: #60767d;
           transition: 0.1s ease-in-out;
         }
+      }
+      .nav-link.cart {
+        display: block;
       }
     }
 
@@ -817,7 +823,8 @@
 body {
   font-family: 'Raleway', sans-serif;
   margin-left: 0 auto;
-  max-width: 1600px;
+  max-width: 100%;
+  width: 100%;
 }
 
 .figure-img {
@@ -982,6 +989,26 @@ footer {
 }
 // Extra small devices (portrait phones, less than 576px)
 @media (max-width: 575.98px) {
+  .navbar {
+    .navbar-brand {
+      font-size: 1.5em;
+    }
+    .nav-link.cart {
+      display: none !important;
+    }
+    .cart {
+      display: block;
+      color: black !important;
+      &:hover {
+        transition: 0.2s ease-out;
+        color: rgba(1, 1, 1, 0.8);
+      }
+      .svg-inline--fa {
+        height: 1.5em;
+        width: 2em;
+      }
+    }
+  }
   .section-carousel {
     .carousel-inner {
       .carousel-item {
@@ -1060,7 +1087,8 @@ footer {
     top: 5%;
 
     .alt-font {
-      font-size: 0.7em;
+      font-size: 1em;
+      padding-left: 25px;
     }
   }
 
@@ -1071,7 +1099,7 @@ footer {
     transform: translate(0%, 0%);
 
     .uppercase {
-      font-size: 1em;
+      font-size: 1.6em;
 
       span {
         padding-left: 0;
@@ -1080,9 +1108,9 @@ footer {
   }
 
   .carousel-caption.three {
-    top: 33%;
+    top: 48%;
     transform: translate(0%, 0%);
-
+    left: 80px;
     hr {
       display: none;
     }
@@ -1116,7 +1144,8 @@ footer {
     transform: translate(0%, 0%);
 
     .alt-font {
-      font-size: 0.7em;
+      font-size: 1em;
+      padding-right: 25px;
     }
   }
 
@@ -1126,13 +1155,17 @@ footer {
     transform: translate(0%, 0%);
 
     .uppercase {
-      font-size: 1em;
+      font-size: 1.4em;
+      span {
+        padding-right: 5px;
+      }
     }
   }
 
   .carousel-caption.third-three {
-    top: 35%;
+    top: 44%;
     transform: translate(0%, 0%);
+    right: 70px;
 
     .primary-product-button {
       font-size: 8px;
@@ -1182,6 +1215,21 @@ footer {
   //first data-slide
   .carousel-caption.three {
     top: 45%;
+  }
+  .nav-link.cart {
+    display: none !important;
+  }
+  .cart {
+    display: block !important;
+    color: black !important;
+    &:hover {
+      transition: 0.2s ease-out;
+      color: rgba(1, 1, 1, 0.8);
+    }
+    .svg-inline--fa {
+      height: 1.5em;
+      width: 2em;
+    }
   }
   // second slide content here ->
   .carousel-caption.second {
@@ -1235,6 +1283,22 @@ footer {
 }
 // Medium devices (tablets, 768px and up)
 @media (min-width: 768px) and (max-width: 991.98px) {
+  .nav-link.cart {
+    display: none !important;
+  }
+  .cart {
+    display: block !important;
+    color: black !important;
+    &:hover {
+      transition: 0.2s ease-out;
+      color: rgba(1, 1, 1, 0.8);
+    }
+    .svg-inline--fa {
+      height: 1.5em;
+      width: 2em;
+    }
+  }
+
   .v-header.container {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -1401,7 +1465,7 @@ footer {
 }
 
 .navbar-toggler:not([disabled]):not(.disabled) {
-  background-color: black;
+  background-color: #061b0d;
 }
 // // products.php {}
 
@@ -1510,9 +1574,10 @@ footer {
 // index php VIDEO
 
 #content {
+  margin-bottom: 80px;
   .box-content {
     box-shadow: 0 8px 16px 0 rgba(121, 116, 116, 0.42);
-    margin-top: 15vh;
+    margin-top: 10vh;
 
     .image-holder {
       overflow: hidden;
@@ -1725,8 +1790,34 @@ footer {
       img {
         height: auto;
         object-fit: cover;
-        width: 100%;
+        width: 90%;
         margin: 20px;
+      }
+    }
+    .image-content {
+      h3 {
+        text-align: center;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      hr {
+        color: black;
+      }
+      table {
+        th {
+          text-align: center;
+          letter-spacing: 2px;
+          padding: 15px 20px;
+        }
+        td {
+          text-align: center;
+        }
+        img {
+          object-fit: cover;
+          height: auto;
+          width: 100%;
+        }
       }
     }
     .cart-button {
@@ -1779,7 +1870,6 @@ footer {
       }
 
     }
-
   }
 }
 @-webkit-keyframes animatetop {
