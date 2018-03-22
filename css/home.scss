@@ -189,6 +189,7 @@
 
       .nav-link.cart {
         display: block;
+        cursor: pointer;
       }
     }
 
@@ -993,7 +994,7 @@ footer {
 @media (max-width: 575.98px) {
   .navbar {
     .navbar-brand {
-      font-size: 1.5em;
+      font-size: 1.4em;
     }
 
     .nav-link.cart {
@@ -1220,6 +1221,8 @@ footer {
   .modal {
     .modal-content {
       width: 100% !important;
+      height: 70vh;
+      overflow: auto;
     }
   }
 }
@@ -1296,6 +1299,8 @@ footer {
 
   .modal-content {
     width: 90% !important;
+    height: 70vh;
+    overflow: auto;
   }
 }
 // Medium devices (tablets, 768px and up)
@@ -1788,8 +1793,10 @@ footer {
   top: 0;
   width: 100%;
   /* Stay in place */
-  z-index: 1;
+  z-index: 999;
   /* Black w/ opacity */
+  // remove the scroll
+  overflow: hidden;
   .modal-content {
     -webkit-animation-duration: 0.4s;
     -webkit-animation-name: animatetop;
@@ -1803,6 +1810,7 @@ footer {
     position: relative;
     width: 70%;
     border-radius: 0;
+    top: 30px;
 
     .gallery-content {
       padding: 0;
@@ -1846,6 +1854,74 @@ footer {
       }
     }
 
+        .cart-button {
+          display: block;
+          margin: auto;
+          .content-modal {
+            a {
+              text-decoration: none;
+            }
+
+            .add {
+              clear: both;
+              cursor: pointer;
+              font-size: 0.8em;
+              font-weight: 400;
+              margin: 10px 0;
+              padding: 15px;
+              text-transform: uppercase;
+              display: block;
+              margin: auto;
+              color: black;
+              border: 1px solid black;
+              letter-spacing: 2px;
+              background: transparent;
+
+              &:hover {
+                background-color: black;
+                color: white;
+                transition: 200ms ease-in-out;
+              }
+            }
+          }
+
+          .button {
+          height: 30px;
+
+            .close {
+              color: black;
+              float: right;
+              font-size: 28px;
+              font-weight: bold;
+              text-align: right;
+              margin-left: 10px;
+
+              &:focus,
+              &:hover {
+                color: #000;
+                cursor: pointer;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+  }
+  .modal-content-cart {
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-name: animatetop;
+    animation-duration: 0.4s;
+    animation-name: animatetop;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    margin: auto;
+    padding: 0;
+    position: relative;
+    width: 70%;
+    border-radius: 0;
+    overflow: auto;
+    height: 70vh;
+    top: 30px;
     .cart-content {
       h3 {
         text-align: center;
@@ -1855,6 +1931,8 @@ footer {
       }
 
       .text-heading {
+        display: block;
+        margin: auto;
         p {
           font-weight: 500;
           margin: 0;
@@ -1868,86 +1946,116 @@ footer {
 
         .border-cart {
           border: 1px solid black;
-          width: 15vh;
+          width: 13vh;
+          text-align: center;
 
           a {
             text-decoration: none;
             color: black;
             font-lighter: bolder;
-            font-size: 20px;
           }
+          .plus {
+
+                  margin-right: 25px;
+          }
+        }
+      }
+
+      .image-content {
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: auto;
+          max-width: 150vh;
+          max-height: 50vh;
         }
       }
 
       .content-total {
-        a {
+
+        h2 {
           color: black;
-        }
-
-        button {
-          background: transparent;
-          border: 1px solid black;
-          padding: 0 25px;
-          margin-left: 20px;
-          &:hover {
-            color: white;
-            background-color: black;
-            transition: 0.2s ease-in;
-            cursor: pointer;
-          }
-        }
-      }
-    }
-
-    .cart-button {
-      .content-modal {
-        a {
-          text-decoration: none;
-        }
-
-        .add {
-          clear: both;
-          cursor: pointer;
-          font-size: 0.8em;
-          font-weight: 400;
-          margin: 10px 0;
-          padding: 15px;
-          text-transform: uppercase;
-          display: block;
-          margin: auto;
-          color: black;
-          border: 1px solid black;
-          letter-spacing: 2px;
-          background: transparent;
-
-          &:hover {
-            background-color: black;
-            color: white;
-            transition: 200ms ease-in-out;
-          }
-        }
-      }
-
-      .button {
-        height: 30px;
-
-        .close {
-          color: black;
-          float: right;
-          font-size: 28px;
-          font-weight: bold;
-          text-align: right;
-          margin-left: 10px;
-
-          &:focus,
-          &:hover {
-            color: #000;
-            cursor: pointer;
+          font-size: 1em;
+          a {
+            color: black;
             text-decoration: none;
           }
+          &:hover {
+            color: #887676;
+            transition: 0.3s ease-out;
+          }
+        }
+        a {
+        text-decoration: none !important;
+
+          button {
+            background: transparent;
+            border: 1px solid black;
+            padding: 0 25px;
+            text-align: center;
+            display: block;
+            margin: auto;
+
+            &:hover {
+              color: white;
+              background-color: black;
+              transition: 0.2s ease-in;
+              cursor: pointer;
+            }
+          }
         }
       }
     }
+
+        .cart-button {
+          .content-modal {
+            a {
+              text-decoration: none;
+            }
+
+            .add {
+              clear: both;
+              cursor: pointer;
+              font-size: 0.8em;
+              font-weight: 400;
+              margin: 10px 0;
+              padding: 15px;
+              text-transform: uppercase;
+              display: block;
+              margin: auto;
+              color: black;
+              border: 1px solid black;
+              letter-spacing: 2px;
+              background: transparent;
+
+              &:hover {
+                background-color: black;
+                color: white;
+                transition: 200ms ease-in-out;
+              }
+            }
+          }
+
+          .button {
+            height: 30px;
+
+            .close {
+              color: black;
+              float: right;
+              font-size: 28px;
+              font-weight: bold;
+              text-align: right;
+              margin-left: 10px;
+
+              &:focus,
+              &:hover {
+                color: #000;
+                cursor: pointer;
+                text-decoration: none;
+              }
+            }
+          }
+        }
   }
 }
 @-webkit-keyframes animatetop {
