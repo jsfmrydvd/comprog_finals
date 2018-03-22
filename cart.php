@@ -61,7 +61,12 @@ include 'config.php';
       <div class="col-md-12 text-center">
         <!-- <div class="table-contents" style="border: 2px solid black; background-color: rgba(0,0,0,.58);"> -->
         <?php
+        if(isset($_SESSION['cart'])) {
           echo '<p><h3>Your Shopping Cart</h3></p>';
+        }else {
+          echo '<p><h3>Your Shopping Cart is Empty</h3></p>';
+        }
+          echo '<hr />';
           if(isset($_SESSION['cart'])) {
             $total = 0;
             echo '<table style="margin: auto;">';
@@ -176,7 +181,7 @@ include 'config.php';
         }
 
         else {
-          echo "You have no items in your shopping cart.";
+          echo '<a href="main.php">Continue Shopping Here</a>';
         }
 
         echo '</div>';

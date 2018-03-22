@@ -124,7 +124,7 @@ include 'config.php';
               <label for="right-label" class="right inline">Password</label>
             </div>
             <div class="col-md-12">
-              <input type="password" id="right-label" name="repwd">
+              <input type="password" id="right-label" name="pwd">
             </div>
           </div>
           <div class="row">
