@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 21, 2018 at 05:18 PM
+-- Generation Time: Mar 24, 2018 at 02:17 PM
 -- Server version: 5.7.21-log
 -- PHP Version: 7.1.8
 
@@ -43,11 +43,11 @@ CREATE TABLE `bags` (
 --
 
 INSERT INTO `bags` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
-(23, 'bag-1a', 'Bag-1', 'bag', 'bag-1.jpeg', 18, '5000.00'),
-(24, 'bag-2a', 'Bag-2', 'bag', 'bag-2.jpeg', 11, '2600.00'),
-(25, 'bag-3a', 'Bag-3', 'bag', 'bag-3.jpg', 16, '1000.00'),
-(26, 'bag-4a', 'Bag-4', 'bag', 'bag-4.jpeg', 12, '4000.00'),
-(27, 'bag-5a', 'Bag-5', 'bag', 'bag-5.jpeg', 23, '6000.00');
+(13, 'bag-1a', 'Bag-1', 'bag', 'bag-1.jpeg', 0, '5000.00'),
+(14, 'bag-2a', 'Bag-2', 'bag', 'bag-2.jpeg', 1, '2600.00'),
+(15, 'bag-3a', 'Bag-3', 'bag', 'bag-3.jpg', 2, '1000.00'),
+(16, 'bag-4a', 'Bag-4', 'bag', 'bag-4.jpeg', 1, '4000.00'),
+(17, 'bag-5a', 'Bag-5', 'bag', 'bag-5.jpeg', 2, '6000.00');
 
 -- --------------------------------------------------------
 
@@ -61,7 +61,7 @@ CREATE TABLE `camera` (
   `product_name` varchar(60) NOT NULL,
   `product_desc` tinytext NOT NULL,
   `product_img_name` varchar(255) NOT NULL,
-  `qty` int(255) NOT NULL,
+  `qty` int(5) NOT NULL,
   `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -70,12 +70,12 @@ CREATE TABLE `camera` (
 --
 
 INSERT INTO `camera` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
-(19, 'c1', 'cam1', 'camera', 'slr-1.jpeg', 18, '10000.00'),
-(20, 'c2', 'cam2', 'camera', 'slr-2.jpg', 9, '2000.00'),
-(21, 'c3', 'cam3', 'camera', 'slr-3.jpeg', 18, '5000.00'),
-(22, 'c4', 'cam4', 'camera', 'slr-4.jpeg', 5, '5603.00'),
-(38, 'c5', 'cam5', 'camera', 'slr-5.jpeg', 10, '7000.00'),
-(39, 'c6', 'cam6', 'camera', 'slr-6.jpeg', 21, '3333.00');
+(7, 'c1', 'cam1', 'camera', 'slr-1.jpeg', 2, '10000.00'),
+(8, 'c2', 'cam2', 'camera', 'slr-2.jpg', 2, '2000.00'),
+(9, 'c3', 'cam3', 'camera', 'slr-3.jpeg', 2, '5000.00'),
+(10, 'c4', 'cam4', 'camera', 'slr-4.jpeg', 2, '5603.00'),
+(11, 'c5', 'cam5', 'camera', 'slr-5.jpeg', 2, '7000.00'),
+(12, 'c6', 'cam6', 'camera', 'slr-6.jpeg', 2, '3333.00');
 
 -- --------------------------------------------------------
 
@@ -98,12 +98,12 @@ CREATE TABLE `mens` (
 --
 
 INSERT INTO `mens` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
-(28, 'mens-1a', 'Mens-1', 'clothing', 'mens-1.jpg', 18, '400.00'),
-(29, 'mens-2a', 'Mens-2', 'clothing', 'mens-2.jpeg', 13, '500.00'),
-(30, 'mens-3a', 'Mens-3', 'clothing', 'mens-3.jpeg', 19, '1000.00'),
-(31, 'mens-4a', 'Mens-4', 'clothing', 'mens-4.jpeg', 11, '560.00'),
-(32, 'mens-5a', 'Mens-5', 'clothing', 'mens-5.jpeg', 22, '1200.00'),
-(33, 'mens-6a', 'Mens-6', 'clothing', 'mens-6.jpeg', 12, '1110.00');
+(18, 'mens-1a', 'Mens-1', 'clothing', 'mens-1.jpg', 2, '400.00'),
+(19, 'mens-2a', 'Mens-2', 'clothing', 'mens-2.jpeg', 2, '500.00'),
+(20, 'mens-3a', 'Mens-3', 'clothing', 'mens-3.jpeg', 2, '1000.00'),
+(21, 'mens-4a', 'Mens-4', 'clothing', 'mens-4.jpeg', 2, '560.00'),
+(22, 'mens-5a', 'Mens-5', 'clothing', 'mens-5.jpeg', 2, '1200.00'),
+(23, 'mens-6a', 'Mens-6', 'clothing', 'mens-6.jpeg', 1, '1110.00');
 
 -- --------------------------------------------------------
 
@@ -128,18 +128,15 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `product_code`, `product_name`, `product_desc`, `price`, `units`, `total`, `date`, `email`) VALUES
-(1, 'w1', 'watch1', 'TEST', 5000, 1, 5000, '2018-03-17 06:02:09', 'root@gmail.com'),
-(2, 'w5', 'watch5', '11', 12321, 1, 12321, '2018-03-17 06:06:04', 'root@gmail.com'),
-(3, 'w6', 'watch6', '11', 11, 1, 11, '2018-03-18 06:31:56', 'root@gmail.com'),
-(4, 'c2', 'cam2', 'camera', 200, 1, 200, '2018-03-18 06:31:56', 'root@gmail.com'),
-(5, 'w4', 'watch4', 'watch', 560, 5, 2800, '2018-03-21 15:09:30', 'root@gmail.com'),
-(6, 'w6', 'watch6', 'watch', 300, 3, 900, '2018-03-21 15:09:30', 'root@gmail.com'),
-(7, 'bag-3a', 'Bag-3', 'bag', 1000, 3, 3000, '2018-03-21 15:09:30', 'root@gmail.com'),
-(8, 'w3', 'watch3', 'watch', 1000, 1, 1000, '2018-03-21 15:21:25', 'root@gmail.com'),
-(9, 'c5', 'cam5', 'camera', 7000, 2, 14000, '2018-03-21 16:14:03', 'root@gmail.com'),
-(10, 'c6', 'cam6', 'camera', 3333, 1, 3333, '2018-03-21 16:14:03', 'root@gmail.com'),
-(11, 'c1', 'cam1', 'camera', 10000, 1, 10000, '2018-03-21 16:14:03', 'root@gmail.com'),
-(12, 'c2', 'cam2', 'camera', 2000, 1, 2000, '2018-03-21 16:14:03', 'root@gmail.com');
+(1, 'w5', 'watch5', 'watch', 1200, 2, 2400, '2018-03-23 09:53:28', 'root@gmail.com'),
+(2, 'bag-4a', 'Bag-4', 'bag', 4000, 1, 4000, '2018-03-23 09:53:28', 'root@gmail.com'),
+(3, 'w4', 'watch4', 'watch', 560, 2, 1120, '2018-03-23 09:53:55', 'root@gmail.com'),
+(4, 'w2', 'watch2', 'watch', 200, 2, 400, '2018-03-23 09:54:17', 'root@gmail.com'),
+(5, 'bag-1a', 'Bag-1', 'bag', 5000, 2, 10000, '2018-03-23 09:54:26', 'root@gmail.com'),
+(6, 'bag-2a', 'Bag-2', 'bag', 2600, 1, 2600, '2018-03-23 09:54:32', 'root@gmail.com'),
+(7, 'womens-2a', 'Womens-2', 'Clothing', 800, 1, 800, '2018-03-23 09:57:07', 'root@gmail.com'),
+(8, 'womens-3a', 'Womens-3', 'Clothing', 1000, 2, 2000, '2018-03-23 09:57:26', 'root@gmail.com'),
+(9, 'mens-6a', 'Mens-6', 'clothing', 1110, 1, 1110, '2018-03-23 09:57:26', 'root@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -194,7 +191,9 @@ INSERT INTO `users` (`id`, `fname`, `lname`, `address`, `city`, `pin`, `email`, 
 (35, 'ginagawamu', 'mumu', '21231ax', 'asda', 1211, 'gege@gmail.com', 'password', 'user'),
 (36, 'gegewamu', 'gegemo', '234sks', 'asnasnd', 99292, 'gegi@gmail.com', 'password', 'user'),
 (37, 'anone', 'anonene', '223hjh', 'angelesba', 29329, 'tengi@gmail.com', 'password', 'user'),
-(38, 'jeje', 'jejee', '23kj2k', 'anshe', 29101, 'uu@gmail.com', 'password', 'user');
+(38, 'jeje', 'jejee', '23kj2k', 'anshe', 29101, 'uu@gmail.com', 'password', 'user'),
+(39, 'yeye', 'yyeyeye', 'yeyey', '323', 232323, 'yeye@gmail.com', 'PASSWORD', 'user'),
+(42, 'sjhdjahsj', 'jhakjfhakjsbk', 'jhkjdshkjfd', '3345', 4444, 'yet@gmail.com', 'password', 'user');
 
 -- --------------------------------------------------------
 
@@ -217,12 +216,12 @@ CREATE TABLE `watch` (
 --
 
 INSERT INTO `watch` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
-(13, 'w1', 'watch1', 'watch', 'watch-1.jpeg', 18, '5000.00'),
-(14, 'w2', 'watch2', 'watch', 'watch-2.jpeg', 11, '200.00'),
-(15, 'w3', 'watch3', 'watch', 'watch-3.jpeg', 18, '1000.00'),
-(16, 'w4', 'watch4', 'watch', 'watch-4.jpeg', 0, '560.00'),
-(17, 'w5', 'watch5', 'watch', 'watch-5.jpeg', 4, '1200.00'),
-(18, 'w6', 'watch6', 'watch', 'watch-6.jpeg', 7, '300.00');
+(1, 'w1', 'watch1', 'watch', 'watch-1.jpeg', 3, '5000.00'),
+(2, 'w2', 'watch2', 'watch', 'watch-2.jpeg', 2, '200.00'),
+(3, 'w3', 'watch3', 'watch', 'watch-3.jpeg', 5, '1000.00'),
+(4, 'w4', 'watch4', 'watch', 'watch-4.jpeg', 0, '560.00'),
+(5, 'w5', 'watch5', 'watch', 'watch-5.jpeg', 0, '1200.00'),
+(6, 'w6', 'watch6', 'watch', 'watch-6.jpeg', 2, '300.00');
 
 -- --------------------------------------------------------
 
@@ -245,10 +244,10 @@ CREATE TABLE `womens` (
 --
 
 INSERT INTO `womens` (`id`, `product_code`, `product_name`, `product_desc`, `product_img_name`, `qty`, `price`) VALUES
-(34, 'womens-1a', 'Womens-1', 'Clothing', 'womens-1.jpeg', 18, '500.00'),
-(35, 'womens-2a', 'Womens-2', 'Clothing', 'womens-2.jpeg', 11, '800.00'),
-(36, 'womens-3a', 'Womens-3', 'Clothing', 'womens-3.jpeg', 19, '1000.00'),
-(37, 'womens-4a', 'Womens-4', 'Clothing', 'womens-4.jpeg', 21, '560.00');
+(24, 'womens-1a', 'Womens-1', 'Clothing', 'womens-1.jpeg', 2, '500.00'),
+(25, 'womens-2a', 'Womens-2', 'Clothing', 'womens-2.jpeg', 8, '800.00'),
+(26, 'womens-3a', 'Womens-3', 'Clothing', 'womens-3.jpeg', 2, '1000.00'),
+(27, 'womens-4a', 'Womens-4', 'Clothing', 'womens-4.jpeg', 4, '560.00');
 
 --
 -- Indexes for dumped tables
@@ -325,12 +324,12 @@ ALTER TABLE `mens`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 --
 -- AUTO_INCREMENT for table `watch`
 --

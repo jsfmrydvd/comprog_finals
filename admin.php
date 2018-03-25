@@ -1,5 +1,6 @@
 <?php
 
+//if (session_status() !== PHP_SESSION_ACTIVE) {session_start();}
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 if(!isset($_SESSION["username"])) {
@@ -65,6 +66,7 @@ include 'config.php';
       </div>
     </nav>
 
+
     <div class="featured-items-collection products">
       <div class="container">
         <div class="text-heading col-auto text-center">
@@ -76,30 +78,13 @@ include 'config.php';
         </div>
     <div class="row d-flex justify-content-around">
         <?php
-          $result = $mysqli->query("SELECT * from camera order by id asc");
-          $result1 = $mysqli->query("SELECT * from watch order by id asc");
+          $result = $mysqli->query("SELECT * from watch order by id asc");
+          $result1 = $mysqli->query("SELECT * from camera order by id asc");
           $result2 = $mysqli->query("SELECT * from bags order by id asc");
           $result3 = $mysqli->query("SELECT * from mens order by id asc");
           $result4 = $mysqli->query("SELECT * from womens order by id asc");
           if($result) {
             while($obj = $result->fetch_object()) {
-              echo '<div class="image-content-products">';
-              echo '<h3>'.$obj->product_name.'</h3>';
-              echo '<img src="img/camera/'.$obj->product_img_name.'"/>';
-              echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
-              echo '<p><strong>Description</strong>: '.$obj->product_desc.'</p>';
-              echo '<p><strong>Units Available</strong>: '.$obj->qty.'</p>';
-              echo '<form method="post" name="update-quantity" action="admin-update.php">';
-              echo '<p><strong>New Qty</strong>:</p>';
-              echo '<div class="large-6 columns" style="margin-bottom: 30px;">';
-              echo '<input type="number" name="quantity[]"/>';
-              echo '<input type="submit" name="quantity[]"/>';
-              echo '</div>';
-              echo '</div>';
-            }
-          }
-          if($result1) {
-            while($obj = $result1->fetch_object()) {
               echo '<div class="image-content-products">';
               echo '<h3>'.$obj->product_name.'</h3>';
               echo '<img src="img/watch/'.$obj->product_img_name.'"/>';
@@ -110,7 +95,24 @@ include 'config.php';
               echo '<p><strong>New Qty</strong>:</p>';
               echo '<div class="large-6 columns" style="margin-bottom: 30px;">';
               echo '<input type="number" name="quantity[]"/>';
-              echo '<input type="submit" name="quantity[]"/>';
+              echo '<input style="clear:both;" type="submit" class="button" value="Update">';
+              echo '</div>';
+              echo '</div>';
+            }
+          }
+          if($result1) {
+            while($obj = $result1->fetch_object()) {
+              echo '<div class="image-content-products">';
+              echo '<h3>'.$obj->product_name.'</h3>';
+              echo '<img src="img/slr/'.$obj->product_img_name.'"/>';
+              echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
+              echo '<p><strong>Description</strong>: '.$obj->product_desc.'</p>';
+              echo '<p><strong>Units Available</strong>: '.$obj->qty.'</p>';
+              echo '<form method="post" name="update-quantity" action="admin-update.php">';
+              echo '<p><strong>New Qty</strong>:</p>';
+              echo '<div class="large-6 columns" style="margin-bottom: 30px;">';
+              echo '<input type="number" name="quantity[]"/>';
+              echo '<input style="clear:both;" type="submit" class="button" value="Update">';
               echo '</div>';
               echo '</div>';
             }
@@ -127,7 +129,7 @@ include 'config.php';
               echo '<p><strong>New Qty</strong>:</p>';
               echo '<div class="large-6 columns" style="margin-bottom: 30px;">';
               echo '<input type="number" name="quantity[]"/>';
-              echo '<input type="submit" name="quantity[]"/>';
+              echo '<input style="clear:both;" type="submit" class="button" value="Update">';
               echo '</div>';
               echo '</div>';
             }
@@ -144,7 +146,7 @@ include 'config.php';
               echo '<p><strong>New Qty</strong>:</p>';
               echo '<div class="large-6 columns" style="margin-bottom: 30px;">';
               echo '<input type="number" name="quantity[]"/>';
-              echo '<input type="submit" name="quantity[]"/>';
+              echo '<input style="clear:both;" type="submit" class="button" value="Update">';
               echo '</div>';
               echo '</div>';
             }
@@ -161,7 +163,7 @@ include 'config.php';
               echo '<p><strong>New Qty</strong>:</p>';
               echo '<div class="large-6 columns" style="margin-bottom: 30px;">';
               echo '<input type="number" name="quantity[]"/>';
-              echo '<input type="submit" name="quantity[]"/>';
+              echo '<input style="clear:both;" type="submit" class="button" value="Update">';
               echo '</div>';
               echo '</div>';
             }
@@ -170,13 +172,18 @@ include 'config.php';
       </div>
     </div>
   </div>
-
-
-            <!-- Footer -->
-            <?php include('assets/footer.html') ?>
-            <!-- cart modal -->
-            <?php include('assets/cart-modal.php') ?>
-            <!-- Scripts -->
-            <?php include('assets/scripts.html') ?>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <input style="clear:both;" type="submit" class="button" value="Update">
+        </div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <?php include('assets/footer.html') ?>
+    <!-- cart modal -->
+    <?php include('assets/cart-modal.php') ?>
+    <!-- Scripts -->
+    <?php include('assets/scripts.html') ?>
   </body>
 </html>

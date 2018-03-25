@@ -1193,7 +1193,7 @@ footer {
   .parallax-heading-bg {
     .tagline {
       p {
-        padding-top: 16vh;
+        padding-top: 30vh;
         font-size: 20px;
       }
     }
@@ -1223,6 +1223,13 @@ footer {
       width: 100% !important;
       height: 70vh;
       overflow: auto;
+    }
+  }
+  .fail-content-alert,
+  .success-content-alert {
+    h2 {
+      font-size: 2em !important;
+      margin-top: 50px;
     }
   }
 }
@@ -1507,6 +1514,15 @@ footer {
       margin: auto;
       padding: 15px 30px;
       width: 35vh;
+    }
+    .collections {
+      background-color: rgba(0, 0, 0, 0.69);
+      border: none;
+      color: white;
+      display: block;
+      margin: auto;
+      padding: 15px 30px;
+      width: 40vh;
     }
   }
 

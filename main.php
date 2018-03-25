@@ -60,6 +60,7 @@ if(session_id() == '' || !isset($_SESSION)){
     </nav>
 
 
+
   <!-- Carousel Section -->
   <?php include('assets/carousel.html') ?>
   <!-- collection of items under carousel -->
