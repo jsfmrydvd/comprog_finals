@@ -61,7 +61,7 @@ include 'config.php';
     <div class="text-heading col-auto text-center">
       <div class="text-holder">
         <!-- heading -->
-        <h2>Collections</h2>
+        <h2 class="collections">Collections</h2>
             <hr />
       </div>
     </div>
@@ -70,7 +70,7 @@ include 'config.php';
 </div>
 <div id="content">
   <div class="container" style="padding: 0;">
-    <div class="row d-flex justify-content-around">
+    <div class="row d-flex justify-content-around" style="margin: 0;">
       <div class="box-content" ng-controller="loginCtrl">
         <div class="image-holder" onclick="window.location.href='watch.php';">
           <img src="img/watch-4.jpeg" alt="First slide">

@@ -13,6 +13,8 @@ if(isset($_SESSION['cart'])) {
     $result = $mysqli->query("SELECT * FROM bags WHERE id = ".$product_id);
     $result1 = $mysqli->query("SELECT * FROM camera WHERE id = ".$product_id);
     $result2 = $mysqli->query("SELECT * FROM watch WHERE id = ".$product_id);
+    $result3 = $mysqli->query("SELECT * FROM mens WHERE id = ".$product_id);
+    $result4 = $mysqli->query("SELECT * FROM womens WHERE id = ".$product_id);
 
 
     if($result){
@@ -67,6 +69,44 @@ if(isset($_SESSION['cart'])) {
         if($query){
           $newqty = $obj->qty - $quantity;
           if($mysqli->query("UPDATE watch SET qty = ".$newqty." WHERE id = ".$product_id)){
+
+          }
+        }
+      }
+    }
+    if($result3){
+
+      if($obj = $result3->fetch_object()) {
+
+
+        $cost = $obj->price * $quantity;
+
+        $user = $_SESSION["username"];
+
+        $query = $mysqli->query("INSERT INTO orders (product_code, product_name, product_desc, price, units, total, email) VALUES('$obj->product_code', '$obj->product_name', '$obj->product_desc', $obj->price, $quantity, $cost, '$user')");
+
+        if($query){
+          $newqty = $obj->qty - $quantity;
+          if($mysqli->query("UPDATE mens SET qty = ".$newqty." WHERE id = ".$product_id)){
+
+          }
+        }
+      }
+    }
+    if($result4){
+
+      if($obj = $result4->fetch_object()) {
+
+
+        $cost = $obj->price * $quantity;
+
+        $user = $_SESSION["username"];
+
+        $query = $mysqli->query("INSERT INTO orders (product_code, product_name, product_desc, price, units, total, email) VALUES('$obj->product_code', '$obj->product_name', '$obj->product_desc', $obj->price, $quantity, $cost, '$user')");
+
+        if($query){
+          $newqty = $obj->qty - $quantity;
+          if($mysqli->query("UPDATE womens SET qty = ".$newqty." WHERE id = ".$product_id)){
 
           }
         }

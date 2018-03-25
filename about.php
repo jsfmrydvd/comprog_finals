@@ -56,6 +56,14 @@ if(session_id() == '' || !isset($_SESSION)){session_start();
         </ul>
       </div>
     </nav>
+    <!-- about section -->
+    <div class="container">
+      <div class="row">
+        <div class="heading-primary">
+          <h2>About us</h2>
+        </div>
+      </div>
+    </div>
     <!-- Footer -->
     <?php include('assets/footer.html') ?>
     <!-- cart modal -->

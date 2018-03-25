@@ -15,7 +15,7 @@
               $product_id = array();
               $product_quantity = array();
 
-              $result = $mysqli->query('SELECT * FROM watch WHERE id=13');
+              $result = $mysqli->query('SELECT * FROM watch WHERE id=1');
               if($result === FALSE){
                 die(mysql_error());
               }
@@ -70,7 +70,7 @@
               $product_id = array();
               $product_quantity = array();
 
-              $result = $mysqli->query('SELECT * FROM watch WHERE id=15');
+              $result = $mysqli->query('SELECT * FROM watch WHERE id=3');
               if($result === FALSE){
                 die(mysql_error());
               }
@@ -125,7 +125,7 @@
               $product_id = array();
               $product_quantity = array();
 
-              $result = $mysqli->query('SELECT * FROM watch WHERE id=18');
+              $result = $mysqli->query('SELECT * FROM watch WHERE id=6');
               if($result === FALSE){
                 die(mysql_error());
               }
@@ -179,7 +179,7 @@
               $product_id = array();
               $product_quantity = array();
 
-              $result = $mysqli->query('SELECT * FROM watch WHERE id=16');
+              $result = $mysqli->query('SELECT * FROM watch WHERE id=4');
               if($result === FALSE){
                 die(mysql_error());
               }
@@ -233,7 +233,7 @@
               $product_id = array();
               $product_quantity = array();
 
-              $result = $mysqli->query('SELECT * FROM watch WHERE id=17');
+              $result = $mysqli->query('SELECT * FROM watch WHERE id=5');
               if($result === FALSE){
                 die(mysql_error());
               }
@@ -288,7 +288,7 @@
               $product_id = array();
               $product_quantity = array();
 
-              $result = $mysqli->query('SELECT * FROM bags WHERE id=25');
+              $result = $mysqli->query('SELECT * FROM bags WHERE id=15');
               if($result === FALSE){
                 die(mysql_error());
               }
@@ -342,7 +342,7 @@
               $product_id = array();
               $product_quantity = array();
 
-              $result = $mysqli->query('SELECT * FROM camera WHERE id=19');
+              $result = $mysqli->query('SELECT * FROM camera WHERE id=7');
               if($result === FALSE){
                 die(mysql_error());
               }
@@ -397,7 +397,7 @@
               $product_id = array();
               $product_quantity = array();
 
-              $result = $mysqli->query('SELECT * FROM camera WHERE id=39');
+              $result = $mysqli->query('SELECT * FROM camera WHERE id=12');
               if($result === FALSE){
                 die(mysql_error());
               }

@@ -63,7 +63,6 @@
                 }
               }
               if($bags){
-
                 while($obj = $bags->fetch_object()) {
                   $cost = $obj->price * $quantity; //work out the line cost
                   $total = $total + $cost; //add to the total cost
