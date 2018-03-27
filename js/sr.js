@@ -6,6 +6,7 @@ sr.reveal('.info-left', {
   distance:'100px',
   viewFactor: 0.2
 });
+
 sr.reveal('.info-left-two', {
   duration: 3300,
   origin:'left',
@@ -49,5 +50,27 @@ sr.reveal('.animate-info-1', {
 sr.reveal('.animate-info-2', {
   duration: 2000,
   origin:'right',
+  distance:'100px',
+});
+
+sr.reveal('.footer-top', {
+  duration: 3000,
+  origin:'top',
+  distance:'100px',
+  viewFactor: 0.2
+});
+sr.reveal('.footer-left', {
+  duration: 1500,
+  origin:'top',
+  distance:'100px',
+});
+sr.reveal('.footer-center', {
+  duration: 3000,
+  origin:'top',
+  distance:'100px',
+});
+sr.reveal('.footer-right', {
+  duration: 4500,
+  origin:'top',
   distance:'100px',
 });

@@ -68,7 +68,7 @@ if(session_id() == '' || !isset($_SESSION)){
   <!-- Welcome to our shop -->
   <?php include('assets/welcome.html') ?>
   <!-- featured items 3 items -->
-  <?php include('assets/featured.html') ?>
+  <?php include('assets/featured.php') ?>
   <!-- Parallax  section -->
   <?php include('assets/parallax.html') ?>
   <!-- Gallery image -->

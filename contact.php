@@ -55,7 +55,82 @@ include 'config.php';
       </div>
     </nav>
       <!-- Contact text here -->
-      <!-- container nalang siguro -->
+      <div class="contact-heading-section" ng-controller="loginCtrl">
+        <div class="container">
+          <div class="text-heading col-auto text-center">
+            <div class="text-holder">
+              <!-- heading -->
+              <h2>The Team</h2>
+              <hr />
+            </div>
+          </div>
+          <div class="row d-flex justify-content-around">
+            <div class="image-content">
+              <img width="200px" height="200px" src="img/team/josef.jpg" alt="sample11" />
+              <div class="text-holder">
+                <h4>Josef Mary David</h4>
+                  <p>frontend/backend</p>
+              <div class="icon-holder">
+                <a href="https://twitter.com/jsfmrydvd"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com/jsfmrydvd"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:josefmarydavid@gmail.com"><i class="fab fa-google"></i></a>
+              </div>
+
+              </div>
+            </div>
+            <div class="image-content">
+              <img width="200px" height="200px" src="img/team/april.jpg" alt="sample11" />
+              <div class="text-holder">
+                <h4>April Joie Arazo</h4>
+                  <p>frontend/backend</p>
+                  <div class="icon-holder">
+                    <a href="https://twitter.com/arazoapril"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/apriljoie.arazo"><i class="fab fa-facebook-f"></i></a>
+                    <a href="mailto:aprilarazo0426@gmail.com"><i class="fab fa-google"></i></a>
+                  </div>
+              </div>
+            </div>
+            <div class="image-content">
+              <img width="200px" height="200px" src="img/team/giselle.jpg" alt="sample11" />
+              <div class="text-holder">
+                <h4>Giselle Ayson</h4>
+                  <p>frontend/backend</p>
+                  <div class="icon-holder">
+                    <a href="https://twitter.com/giseellllle"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/giselleayson"><i class="fab fa-facebook-f"></i></a>
+                    <a href="mailto:giselleayson@yahoo.com"><i class="fab fa-google"></i></a>
+                  </div>
+              </div>
+            </div>
+            <div class="image-content">
+              <img width="200px" height="200px" src="img/team/maico.jpg" alt="sample11" />
+              <div class="text-holder">
+                <h4>Maico Degorio</h4>
+                  <p>frontend</p>
+                  <div class="icon-holder">
+                    <a href="https://twitter.com/maicolicious"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/Maicolicious"><i class="fab fa-facebook-f"></i></a>
+                    <a href="mailto:maicodegorio06@gmail.com"><i class="fab fa-google"></i></a>
+                  </div>
+              </div>
+            </div>
+            <div class="image-content">
+              <img width="200px" height="200px" src="img/team/celine.jpg" alt="sample11" />
+              <div class="text-holder">
+                <h4>Celine Joy Salac</h4>
+                  <p>frontend</p>
+                  <div class="icon-holder">
+                    <a href="https://twitter.com/salaccln"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/salaccln"><i class="fab fa-facebook-f"></i></a>
+                    <a href="mailto:salacceline@gmail.com"><i class="fab fa-google"></i></a>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
       <!-- Footer -->
       <?php include('assets/footer.html') ?>
       <!-- cart modal -->

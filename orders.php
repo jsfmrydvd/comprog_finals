@@ -41,7 +41,7 @@ include 'config.php';
           <a class="nav-link" href="contact.php">Contact</a>
         </li>
         <li class="dropdown">
-            <button class="dropbtn">Collection</button>
+          <a class="dropbtn" href="featured.php">Collection</a>
               <div class="dropdown-content">
                 <a href="watch.php">watch</a>
                 <a href="bags.php">bags</a>
@@ -65,7 +65,7 @@ include 'config.php';
     <div class="container">
       <div class="text-heading col-auto text-center">
         <div class="text-holder1">
-          <h2>ORDERS</h2>
+          <h2>MY ORDERS</h2>
               <hr />
         </div>
       </div>
@@ -76,18 +76,30 @@ include 'config.php';
           if($result) {
             while($obj = $result->fetch_object()) {
               //echo '<div class="large-6">';
-              echo '<p><h4>Order ID ->'.$obj->id.'</h4></p>';
-              echo '<p><strong>Date of Purchase</strong>: '.$obj->date.'</p>';
+              echo '<div class="container orders-section orders-top">';
+              echo '<div class="row">';
+              echo '<div class="col-md-12">';
+              echo '<p><h4>Order ID -> '.$obj->id.'</h4></p>';
+              echo '<p class="date-holder">Placed on '.$obj->date.'</p>';
+              echo '<p><hr></p>';
+              echo '</div>';
+              echo '</div>';
+              echo '<div class="row">';
+              echo '<div class="col-md-4">';
+
+              echo '</div>';
+              echo '<div class="col-md-8">';
               echo '<p><strong>Product Code</strong>: '.$obj->product_code.'</p>';
               echo '<p><strong>Product Name</strong>: '.$obj->product_name.'</p>';
               echo '<p><strong>Price Per Unit</strong>: '.$obj->price.'</p>';
               echo '<p><strong>Units Bought</strong>: '.$obj->units.'</p>';
               echo '<p><strong>Total Cost</strong>: '.$currency.$obj->total.'</p>';
-              //echo '</div>';
-              //echo '<div class="large-6">';
-              //echo '<img src="images/products/sports_band.jpg">';
-              //echo '</div>';
-              echo '<p><hr></p>';
+              echo '</div>';
+              echo '</div>';
+              echo '</div>';
+
+
+              echo '<p></p>';
             }
           }
         ?>

@@ -1,11 +1,8 @@
 var myApp = angular.module("myApp",[]);
 myApp.controller('loginCtrl', function($scope) {
     $scope.logo = "iteam store";
-    $scope.price = "80";
+    $scope.info = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. ";
     $scope.title = "Comprog2";
-    $scope.logOut = function(){
-      alert();
-      console.log('tangina');
-    }
+
 
 });
