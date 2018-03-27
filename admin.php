@@ -171,7 +171,6 @@ include 'config.php';
         ?>
       </div>
     </div>
-  </div>
     <div class="container">
       <div class="row">
         <div class="col-md-12 text-center">
@@ -179,6 +178,8 @@ include 'config.php';
         </div>
       </div>
     </div>
+  </div>
+
     <!-- Footer -->
     <?php include('assets/footer.html') ?>
     <!-- cart modal -->
