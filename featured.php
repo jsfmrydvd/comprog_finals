@@ -94,7 +94,7 @@ include 'config.php';
           <img src="img/collection-4.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>CAMERA</h2>
-            <a href="camera.php" class="shop-btn">4 PRODUCTS</a>
+            <a href="camera.php" class="shop-btn">6 PRODUCTS</a>
           </div>
         </div>
       </div>
@@ -103,7 +103,7 @@ include 'config.php';
           <img src="img/featured-mens.jpeg" alt="First slide">
           <div class="text-holder text-center">
             <h2>MENS</h2>
-            <a href="mens.php" class="shop-btn">5 PRODUCTS</a>
+            <a href="mens.php" class="shop-btn">6 PRODUCTS</a>
           </div>
         </div>
       </div>

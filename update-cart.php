@@ -35,6 +35,12 @@ if($camera){
         unset($_SESSION['cart'][$product_id]);
         break;
 
+      case "rem":
+      $_SESSION['cart'][$product_id]--;
+      if($_SESSION['cart'][$product_id])
+        unset($_SESSION['cart'][$product_id]);
+        break;
+
     }
   }
 }
@@ -53,6 +59,12 @@ if($watch){
       case "remove":
       $_SESSION['cart'][$product_id]--;
       if($_SESSION['cart'][$product_id] == 0)
+        unset($_SESSION['cart'][$product_id]);
+        break;
+
+      case "rem":
+      $_SESSION['cart'][$product_id]--;
+      if($_SESSION['cart'][$product_id])
         unset($_SESSION['cart'][$product_id]);
         break;
 
@@ -76,6 +88,12 @@ if($bags){
         unset($_SESSION['cart'][$product_id]);
         break;
 
+      case "rem":
+      $_SESSION['cart'][$product_id]--;
+      if($_SESSION['cart'][$product_id])
+        unset($_SESSION['cart'][$product_id]);
+        break;
+
     }
   }
 }
@@ -96,6 +114,11 @@ if($mens){
         unset($_SESSION['cart'][$product_id]);
         break;
 
+      case "rem":
+      $_SESSION['cart'][$product_id]--;
+      if($_SESSION['cart'][$product_id])
+        unset($_SESSION['cart'][$product_id]);
+        break;
     }
   }
 }
@@ -113,6 +136,12 @@ if($womens){
       case "remove":
       $_SESSION['cart'][$product_id]--;
       if($_SESSION['cart'][$product_id] == 0)
+        unset($_SESSION['cart'][$product_id]);
+        break;
+
+      case "rem":
+      $_SESSION['cart'][$product_id]--;
+      if($_SESSION['cart'][$product_id])
         unset($_SESSION['cart'][$product_id]);
         break;
 

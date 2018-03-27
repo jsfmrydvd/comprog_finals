@@ -1,22 +1,60 @@
 <?php
-
 if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 if(isset($_SESSION["username"])){
 
-        header("location:main.php");
-}
-if(empty($_POST["fname"]) || empty($_POST["pwd"])) {
-
+      header("location:main.php");
 
 }
 
+
+include 'config.php';
+$loginErr  = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["username"]) || empty($_POST["pwd"]) ) {
+    $loginErr = " *Both field is required!";
+  }
+
+  else{
+       $username=mysqli_real_escape_string($mysqli,$_POST["username"]);
+        $password=mysqli_real_escape_string($mysqli,$_POST["pwd"]);
+        $sql="SELECT * FROM users WHERE email='$username'";
+        $result=mysqli_query($mysqli,$sql);
+        $count=mysqli_num_rows($result);
+
+      if($count==1)
+      {
+        $sql2="SELECT password FROM users WHERE email='$username'";
+        $result2=mysqli_query($mysqli,$sql2);
+        $row = mysqli_fetch_array($result2, MYSQLI_ASSOC);
+        $pass = $row['password'];
+        if(password_verify($password, $pass)){
+        $result3 = $mysqli->query('SELECT id, email, password, fname, type from users order by id asc');
+        $obj = $result->fetch_object();
+
+          $_SESSION['username'] = $username;
+          $_SESSION['type'] = $obj->type;
+          $_SESSION['id'] = $obj->id;
+          $_SESSION['fname'] = $obj->fname;
+          header("location:main.php");
+
+        }
+        else
+         $loginErr = " *Your email or password is invalid";
+      }
+      else
+      {
+        $loginErr = " *Your email or password is invalid";
+      }
+    }
+  }
 ?>
 
 <!DOCTYPE html>
 <html ng-app="myApp">
 <head>
   <?php include('assets/head.html') ?>
+
 </head>
   <body>
     <!-- Content of the the top -->
@@ -67,41 +105,34 @@ if(empty($_POST["fname"]) || empty($_POST["pwd"])) {
     </nav>
 
 <!-- Login Form here -->
-    <form method="POST" action="verify.php" style="margin-top:30px;">
-      <div class="row">
-        <div class="col-md-12">
-
+    <form method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" style="margin-top:30px;">
+      <div class="sign-up">
+        <div class="container">
           <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">Email</label>
+              <h1 class="col-md-12">Login</h1>
+              <span class="error col-md-12 text-center" style="color:red"><?php echo $loginErr;?></span><br>
+            <label for="email" class="label-holder col-md-12 text-center"><b>Email</b></label>
+          <div class="input-holder col-md-12">
+              <input class="input-holder col-md-12" type="email" id="right-label" placeholder="email@gmail.com" name="username">
             </div>
-            <div class="col-md-12">
-              <input type="email" id="right-label" placeholder="email@gmail.com" name="username">
+            <label for="password" class="label-holder col-md-12 text-center"><b>Password</b></label>
+            <div class="input-holder col-md-12">
+              <input class="input-holder col-md-12" type="password" id="right-label" name="pwd">
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">Password</label>
-            </div>
-            <div class="col-md-12">
-              <input type="password" id="right-label" name="pwd">
-            </div>
-          </div>
-
-          <div class="row">
-            <div class="col-md-12">
-
-            </div>
-            <div class="col-md-12">
-              <input type="submit" id="right-label" value="Login" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;">
-              <input type="reset" id="right-label" value="Reset" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;">
+            <div class="button-holder-section col-md-12 text-center">
+              <input class="button-type " type="submit" id="right-label" value="Login">
+              <input class="button-type" type="reset" id="right-label" value="Reset">
             </div>
           </div>
         </div>
       </div>
     </form>
+
+
     <!-- Footer -->
     <?php include('assets/footer.html') ?>
+    <!-- cart modal -->
+    <?php include('assets/cart-modal.php') ?>
     <!-- Scripts  -->
     <?php include('assets/scripts.html') ?>
   </body>

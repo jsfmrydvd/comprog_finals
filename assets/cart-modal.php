@@ -30,7 +30,8 @@
                   echo ' <div class="text-heading col-md-6">';
                   echo '<p>Code:<span>'.$obj->product_code.'</span></p>';
                   echo '<p>Name:<span>'.$obj->product_name.'</span></p>';
-                  echo '<p>Quantity<span>'.$quantity.'</span>&nbsp;<div class="border-cart"><a class="button plus" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button" href="update-cart.php?action=remove&id='.$product_id.'">-</a></div></p>';
+                  echo '<p>Quantity<span>'.$quantity.'</span>&nbsp';
+                  echo '<p><a class="button plus" href="cart.php">EDIT</a>&nbsp;</p>';
                   echo '<p>Cost:<span>'.$currency.$cost.'</span></p>';
                   echo '  </div>';
                   echo '  </div>';
@@ -53,7 +54,8 @@
                   echo ' <div class="text-heading col-md-6">';
                   echo '<p>Code:<span>'.$obj->product_code.'</span></p>';
                   echo '<p>Name:<span>'.$obj->product_name.'</span></p>';
-                  echo '<p>Quantity<span>'.$quantity.'</span>&nbsp;<div class="border-cart"><a class="button plus" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button" href="update-cart.php?action=remove&id='.$product_id.'">-</a></div></p>';
+                  echo '<p>Quantity<span>'.$quantity.'</span>&nbsp';
+                  echo '<p><a class="button plus" href="cart.php">EDIT</a>&nbsp;</p>';
                   echo '<p>Cost:<span>'.$currency.$cost.'</span></p>';
                   echo '  </div>';
                   echo '  </div>';
@@ -75,7 +77,8 @@
                   echo ' <div class="text-heading col-md-6">';
                   echo '<p>Code:<span>'.$obj->product_code.'</span></p>';
                   echo '<p>Name:<span>'.$obj->product_name.'</span></p>';
-                  echo '<p>Quantity<span>'.$quantity.'</span>&nbsp;<div class="border-cart"><a class="button plus" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button" href="update-cart.php?action=remove&id='.$product_id.'">-</a></div></p>';
+                  echo '<p>Quantity<span>'.$quantity.'</span>&nbsp';
+                  echo '<p><a class="button plus" href="cart.php">EDIT</a>&nbsp;</p>';
                   echo '<p>Cost:<span>'.$currency.$cost.'</span></p>';
                   echo '  </div>';
                   echo '  </div>';
@@ -98,7 +101,8 @@
                   echo ' <div class="text-heading col-md-6">';
                   echo '<p>Code:<span>'.$obj->product_code.'</span></p>';
                   echo '<p>Name:<span>'.$obj->product_name.'</span></p>';
-                  echo '<p>Quantity<span>'.$quantity.'</span>&nbsp;<div class="border-cart"><a class="button plus" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button" href="update-cart.php?action=remove&id='.$product_id.'">-</a></div></p>';
+                  echo '<p>Quantity<span>'.$quantity.'</span>&nbsp';
+                  echo '<p><a class="button plus" href="cart.php">EDIT</a>&nbsp;</p>';
                   echo '<p>Cost:<span>'.$currency.$cost.'</span></p>';
                   echo '  </div>';
                   echo '  </div>';
@@ -121,7 +125,8 @@
                   echo ' <div class="text-heading col-md-6">';
                   echo '<p>Code:<span>'.$obj->product_code.'</span></p>';
                   echo '<p>Name:<span>'.$obj->product_name.'</span></p>';
-                  echo '<p>Quantity<span>'.$quantity.'</span>&nbsp;<div class="border-cart"><a class="button plus" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button" href="update-cart.php?action=remove&id='.$product_id.'">-</a></div></p>';
+                  echo '<p>Quantity<span>'.$quantity.'</span>&nbsp';
+                  echo '<p><a class="button plus" href="cart.php">EDIT</a>&nbsp;</p>';
                   echo '<p>Cost:<span>'.$currency.$cost.'</span></p>';
                   echo '  </div>';
                   echo '  </div>';

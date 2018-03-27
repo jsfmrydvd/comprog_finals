@@ -3,8 +3,81 @@ if(session_id() == '' || !isset($_SESSION)){session_start();}
 
 if (isset($_SESSION["username"])) {header ("location:index.php");}
 include 'config.php';
+$fnameErr  = "";
+$lnameErr  = "";
+$addrErr  = "";
+$cityErr  = "";
+$pinErr  = "";
+$emailErr  = "";
+$pwdErr  = "";
+$verifyErr  = "";
+$name = "/^[A-Z][a-zA-Z ]+$/";
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["fname"])) {
+    $fnameErr = " *This field is required!";
+  }
+  if (empty($_POST["lname"]) ) {
+    $lnameErr = " *This field is required!";
+  }
+  if (empty($_POST["address"]) ) {
+    $addrErr = " *This field is required!";
+  }
+  if (empty($_POST["city"]) ) {
+    $cityErr = " *This field is required!";
+  }
+  if (empty($_POST["pin"]) ) {
+    $pinErr = " *This field is required!";
+  }
+  if (empty($_POST["email"]) ) {
+    $emailErr = " *This field is required!";
+  }
+  if (empty($_POST["pwd"]) ) {
+    $pwdErr = " *This field is required!";
+  }
+  if (($_POST["pwd"]) != ($_POST["verifyPwd"]) ) {
+          $verifyErr = " *Your password did not match!";
+  }
+  if (($_POST["fname"]) && ($_POST["lname"]) && ($_POST["address"]) && ($_POST["pin"]) && ($_POST["city"]) && ($_POST["email"]) && ($_POST["verifyPwd"]) && ($_POST["pwd"])) {
 
+        $result = mysqli_query($mysqli,"SELECT `email` FROM `users` WHERE `email` = '".$_POST["email"]."'");
+        if (mysqli_num_rows($result)){
+            $emailErr = " *Email is already taken";
+        }
+
+        else if (($_POST["pwd"]) != ($_POST["verifyPwd"]) ) {
+          $verifyErr = " *Your password did not match!";
+          unset($_POST['verifyPwd']);
+        }
+        else if(strlen($_POST["pwd"]) < 8){
+          $pwdErr = " *Password must be at least 8 characters";
+         }
+        else if(strlen($_POST["pin"]) < 11){
+          $pinErr = " *This is not a valid phone number";
+         }
+        else if(substr($_POST["pin"], 0, 2) != "09") {
+          $pinErr = " *This is not a valid phone number";
+         }
+        else if (ctype_alpha(str_replace(' ', '', $_POST["fname"])) == false) {
+          $fnameErr = " *Name must contain letters only";
+         }
+        else if (ctype_alpha(str_replace(' ', '', $_POST["lname"])) == false) {
+          $lnameErr = " *Name must contain letters only";
+         }
+        else{
+          $fname = $_POST["fname"];
+          $lname = $_POST["lname"];
+          $address = $_POST["address"];
+          $city = $_POST["city"];
+          $pin = $_POST["pin"];
+          $email = $_POST["email"];
+          $pass = password_hash($_POST["pwd"],PASSWORD_DEFAULT);
+          $mysqli->query("INSERT INTO users (fname, lname, address, city, pin, email, password) VALUES('$fname', '$lname', '$address', '$city', '$pin', '$email', '$pass')");
+            echo 'Data inserted';
+          header ("location:login.php");
+        }
+      }
+  }
 ?>
 <!DOCTYPE html>
 <html ng-app="myApp">
@@ -59,81 +132,60 @@ include 'config.php';
       </div>
     </nav>
 
-    <form method="POST" action="insert.php" style="margin-top:30px;">
-      <div class="row">
-        <div class="col-md-12">
+    <form method="POST" action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <div class="sign-up">
+        <div class="container">
+          <div class="row">
+            <h1 class="col-md-12">Register Account</h1>
+              <label for="first-name" class="label-holder col-md-12 text-center"><b>First Name</b></label>
+              <div class="input-holder col-md-12">
+                <input class="input-holder col-md-12" type="text" id="right-label" placeholder="Name" name="fname" value = <?php echo isset($_POST['fname']) ? $_POST['fname'] : '' ?>>
+                <span class="error" style="color:red"><?php echo $fnameErr;?></span>
+              </div>
+              <label for="last-name" class="label-holder col-md-12 text-center"><b>Last Name</b></label>
+              <div class="input-holder col-md-12">
+                <input class="input-holder col-md-12" type="text" id="right-label" placeholder="Last Name" name="lname" value = <?php echo isset($_POST['lname']) ? $_POST['lname'] : '' ?>>
+                <span class="error" style="color:red"><?php echo $lnameErr;?></span>
+              </div>
 
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">First Name</label>
-            </div>
-            <div class="col-md-12">
-              <input type="text" id="right-label" placeholder="Name" name="fname">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">Last Name</label>
-            </div>
-            <div class="col-md-12">
-              <input type="text" id="right-label" placeholder="Last Name" name="lname">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">Address</label>
-            </div>
-            <div class="col-md-12">
-              <input type="text" id="right-label" placeholder="Address" name="address">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">City</label>
-            </div>
-            <div class="col-md-12">
-              <input type="text" id="right-label" placeholder="City" name="city">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">Pin Code</label>
-            </div>
-            <div class="col-md-12">
-              <input type="number" id="right-label" placeholder="Pin Code" name="pin">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">E-Mail</label>
-            </div>
-            <div class="col-md-12">
-              <input type="email" id="right-label" placeholder="email@gmail.com" name="email">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">Password</label>
-            </div>
-            <div class="col-md-12">
-              <input type="password" id="right-label" name="pwd">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <label for="right-label" class="right inline">Password</label>
-            </div>
-            <div class="col-md-12">
-              <input type="password" id="right-label" name="pwd">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
+              <label for="province" class="label-holder col-md-12 text-center"><b>Province</b></label>
+              <div class="input-holder col-md-12">
+                <input class="input-holder col-md-12" type="text" id="right-label" placeholder="Province" name="address" value = <?php echo isset($_POST['address']) ? $_POST['address'] : '' ?>>
+                <span class="error" style="color:red"><?php echo $addrErr;?></span>
+              </div>
 
+              <label for="city" class="label-holder col-md-12 text-center"><b>City</b></label>
+              <div class="input-holder col-md-12">
+                <input class="input-holder col-md-12" type="text" id="right-label" placeholder="City" name="city" value = <?php echo isset($_POST['city']) ? $_POST['city'] : '' ?>>
+                <span class="error" style="color:red"><?php echo $cityErr;?></span>
+              </div>
+
+              <label for="pin" class="label-holder col-md-12 text-center"><b>Phone Number</b></label>
+              <div class="input-holder col-md-12">
+                <input class="input-holder col-md-12" type="number" id="right-label" placeholder="Phone Number" name="pin" value = <?php echo isset($_POST['pin']) ? $_POST['pin'] : '' ?>>
+                <span class="error" style="color:red"><?php echo $pinErr;?></span>
+              </div>
+
+              <label for="email" class="label-holder col-md-12 text-center"><b>Email</b></label>
+              <div class="input-holder col-md-12">
+              <input class="input-holder col-md-12" type="email" id="right-label" placeholder="email@gmail.com" name="email" value = <?php echo isset($_POST['email']) ? $_POST['email'] : '' ?>>
+              <span class="error" style="color:red"><?php echo $emailErr;?></span>
             </div>
-            <div class="col-md-12">
-              <input type="submit" name="register" id="right-label" value="Register" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;">
-              <input type="reset" id="right-label" value="Reset" style="background: #0078A0; border: none; color: #fff; font-family: 'Helvetica Neue', sans-serif; font-size: 1em; padding: 10px;">
+
+            <label for="password" class="label-holder col-md-12 text-center"><b>Password</b></label>
+            <div class="input-holder col-md-12">
+              <input class="input-holder col-md-12" type="password" id="right-label" name="pwd">
+              <span class="error" style="color:red"><?php echo $pwdErr;?></span>
+            </div>
+
+            <label for="repassword" class="label-holder col-md-12 text-center"><b>Repassword</b></label>
+            <div class="input-holder col-md-12">
+              <input class="input-holder col-md-12" type="password" id="right-label" name="verifyPwd">
+              <span class="error" style="color:red"><?php echo $verifyErr;?></span>
+            </div>
+            <div class="button-holder-section col-md-12 text-center">
+              <input class="button-type" type="submit" name="register" id="right-label" value="Register" >
+              <input class="button-type" type="reset" id="right-label" value="Reset" >
             </div>
           </div>
         </div>

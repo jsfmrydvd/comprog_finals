@@ -11,7 +11,6 @@ $address = $_POST["address"];
 $city = $_POST["city"];
 $pin = $_POST["pin"];
 $email = $_POST["email"];
-$opwd = $_POST["opwd"];
 $pwd = $_POST["pwd"];
 
 
@@ -52,10 +51,11 @@ if($email!=""){
 }
 
 
-
 if($pwd!=""){
+  $pwd = password_hash($_POST["pwd"],PASSWORD_DEFAULT);
   $query = $mysqli->query('UPDATE users SET password ="'. $pwd .'" WHERE id ='.$_SESSION['id']);
   if($query){
+
   }
 }
 

@@ -57,26 +57,56 @@ include 'config.php';
       </div>
     </nav>
 
+  <div class="container">
     <div class="row" style="margin-top:10px;">
       <div class="col-md-12 text-center">
         <!-- <div class="table-contents" style="border: 2px solid black; background-color: rgba(0,0,0,.58);"> -->
         <?php
         if(isset($_SESSION['cart'])) {
-          echo '<p><h3>Your Shopping Cart</h3></p>';
+          echo '<p><h3 class="cart-heading" style="font-weight: 600;">Your Shopping Cart</h3></p>';
+          echo '<div class="bg-holder col-md-12" style="background-color: #eee;">';
+          echo '<div class="row">';
+          echo '<div class="button1-holder col-md-6" align="left">';
+          echo '<a href="featured.php"><button type="button" class="btn btn-light">Continue Shopping</button></a>';
+          echo '</div>';
+          echo '<div class="button2-holder col-md-6" align="right">';
+          echo '<a href="update-cart.php?action=empty" class="button alert"><button type="button" class="btn btn-light">Empty Cart</button></a>';
+          // echo '<button>checkout</button>';
+          if(isset($_SESSION['username'])) {
+            echo '<a href="orders-update.php"><button type="button" class="btn btn-light" style="float:right;">COD</button></a>';
+          }
+          else {
+            echo '<a href="login.php"><button type="button" class="btn btn-light" style="float:right;">Login</button></a>';
+          }
+          echo '</div>';
+          echo '</div>';
+          echo '</div>';
         }else {
-          echo '<p><h3>Your Shopping Cart is Empty</h3></p>';
+          echo '<p><h3 class="cart-heading" style="font-weight: 600;">Your Shopping Cart is Empty</h3></p>';
         }
+
+
+
+
           echo '<hr />';
+          echo '<div class="table-border">';
+
+
           if(isset($_SESSION['cart'])) {
             $total = 0;
-            echo '<table style="margin: auto;">';
-            echo '<tr>';
-            echo '<th>Product</th>';
-            echo '<th>Code</th>';
-            echo '<th>Name</th>';
-            echo '<th>Quantity</th>';
-            echo '<th>Cost</th>';
-            echo '</tr>';
+
+            echo '<div class="container">';
+            echo '<div class="row">';
+            echo '<div class="table-holder col-md-2">Product</div>';
+            echo '<div class="table-holder col-md-2">Code</div>';
+            echo '<div class="table-holder col-md-2">Name</div>';
+            echo '<div class="table-holder col-md-2">Quantity</div>';
+            echo '<div class="table-holder col-md-2">Cost</div>';
+            echo '<div class="table-holder col-md-2">Remove</div>';
+            echo '</div>';
+            echo '</div>';
+
+
             foreach($_SESSION['cart'] as $product_id => $quantity) {
 
             $camera = $mysqli->query("SELECT product_code, product_name, product_desc, product_img_name, qty, price FROM camera WHERE id = ".$product_id);
@@ -92,13 +122,20 @@ include 'config.php';
                 $cost = $obj->price * $quantity; //work out the line cost
                 $total = $total + $cost; //add to the total cost
 
-                echo '<tr>';
-                echo '<td><img width="100px" height="100px" src="img/slr/'.$obj->product_img_name.'"/></td>';
-                echo '<td>'.$obj->product_code.'</td>';
-                echo '<td>'.$obj->product_name.'</td>';
-                echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';
-                echo '<td>'.$cost.'</td>';
-                echo '</tr>';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="item-table-holder col-md-2">';
+                echo '<img width="100px" height="100px" src="img/slr/'.$obj->product_img_name.'"/>';
+                echo '</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Code: </span>'.$obj->product_code.'</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Name: </span>'.$obj->product_name.'</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Qty: </span>&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>'.$quantity.'&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></div>';
+                echo '<div class="item-table-holder col-md-2"><span>Cost: </span>'.$cost.'</div>';
+                echo '<div class="item-table-holder col-md-2"><a href="update-cart.php?action=rem&id='.$product_id.'" class="btn-remove">remove</a></div>';
+                echo '</div>';
+                echo '</div>';
+
+
               }
             }
             if($watch){
@@ -107,13 +144,18 @@ include 'config.php';
                 $cost = $obj->price * $quantity; //work out the line cost
                 $total = $total + $cost; //add to the total cost
 
-                echo '<tr>';
-                echo '<td><img width="100px" height="100px" src="img/watch/'.$obj->product_img_name.'"/></td>';
-                echo '<td>'.$obj->product_code.'</td>';
-                echo '<td>'.$obj->product_name.'</td>';
-                echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';
-                echo '<td>'.$cost.'</td>';
-                echo '</tr>';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="item-table-holder col-md-2">';
+                echo '<img width="100px" height="100px" src="img/watch/'.$obj->product_img_name.'"/>';
+                echo '</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Code: </span>'.$obj->product_code.'</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Name: </span>'.$obj->product_name.'</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Qty: </span>&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>'.$quantity.'&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></div>';
+                echo '<div class="item-table-holder col-md-2"><span>Cost: </span>'.$cost.'</div>';
+                echo '<div class="item-table-holder col-md-2"><a href="update-cart.php?action=rem&id='.$product_id.'" class="btn-remove">remove</a></div>';
+                echo '</div>';
+                echo '</div>';
               }
             }
             if($bags){
@@ -122,13 +164,18 @@ include 'config.php';
                 $cost = $obj->price * $quantity; //work out the line cost
                 $total = $total + $cost; //add to the total cost
 
-                echo '<tr>';
-                echo '<td><img width="100px" height="100px" src="img/bags/'.$obj->product_img_name.'"/></td>';
-                echo '<td>'.$obj->product_code.'</td>';
-                echo '<td>'.$obj->product_name.'</td>';
-                echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';
-                echo '<td>'.$cost.'</td>';
-                echo '</tr>';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="item-table-holder col-md-2">';
+                echo '<img width="100px" height="100px" src="img/bags/'.$obj->product_img_name.'"/>';
+                echo '</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Code: </span>'.$obj->product_code.'</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Name: </span>'.$obj->product_name.'</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Qty: </span>&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>'.$quantity.'&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></div>';
+                echo '<div class="item-table-holder col-md-2"><span>Cost: </span>'.$cost.'</div>';
+                echo '<div class="item-table-holder col-md-2"><a href="update-cart.php?action=rem&id='.$product_id.'" class="btn-remove">remove</a></div>';
+                echo '</div>';
+                echo '</div>';
               }
             }
             if($mens){
@@ -137,13 +184,18 @@ include 'config.php';
                 $cost = $obj->price * $quantity; //work out the line cost
                 $total = $total + $cost; //add to the total cost
 
-                echo '<tr>';
-                echo '<td><img width="100px" height="100px" src="img/mens/'.$obj->product_img_name.'"/></td>';
-                echo '<td>'.$obj->product_code.'</td>';
-                echo '<td>'.$obj->product_name.'</td>';
-                echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';
-                echo '<td>'.$cost.'</td>';
-                echo '</tr>';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="item-table-holder col-md-2">';
+                echo '<img width="100px" height="100px" src="img/mens/'.$obj->product_img_name.'"/>';
+                echo '</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Code: </span>'.$obj->product_code.'</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Name: </span>'.$obj->product_name.'</div>';
+                echo '<div class="item-table-holder col-md-2"><span>Qty: </span>&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>'.$quantity.'&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></div>';
+                echo '<div class="item-table-holder col-md-2"><span>Cost: </span>'.$cost.'</div>';
+                echo '<div class="item-table-holder col-md-2"><a href="update-cart.php?action=rem&id='.$product_id.'" class="btn-remove">remove</a></div>';
+                echo '</div>';
+                echo '</div>';
               }
             }
             if($womens){
@@ -152,42 +204,42 @@ include 'config.php';
                 $cost = $obj->price * $quantity; //work out the line cost
                 $total = $total + $cost; //add to the total cost
 
-                echo '<tr>';
-                echo '<td><img width="100px" height="100px" src="img/womens/'.$obj->product_img_name.'"/></td>';
-                echo '<td>'.$obj->product_code.'</td>';
-                echo '<td>'.$obj->product_name.'</td>';
-                echo '<td>'.$quantity.'&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></td>';
-                echo '<td>'.$cost.'</td>';
-                echo '</tr>';
+                echo '<div class="container">';
+                echo '<div class="row">';
+                echo '<div class="item-table-holder col-md-2 align="center">';
+                echo '<img width="100px" height="100px" src="img/womens/'.$obj->product_img_name.'"/>';
+                echo '</div>';
+                echo '<div class="item-table-holder col-md-2 align="center"><span>Code: </span>'.$obj->product_code.'</div>';
+                echo '<div class="item-table-holder col-md-2 align="center"><span>Name: </span>'.$obj->product_name.'</div>';
+                echo '<div class="item-table-holder col-md-2 align="center"><span>Qty: </span>&nbsp;<a class="button [secondary success alert]" style="padding:5px;" href="update-cart.php?action=add&id='.$product_id.'">+</a>'.$quantity.'&nbsp;<a class="button alert" style="padding:5px;" href="update-cart.php?action=remove&id='.$product_id.'">-</a></div>';
+                echo '<div class="item-table-holder col-md-2 align="center"><span>Cost: </span>'.$cost.'</div>';
+                echo '<div class="item-table-holder col-md-2 align="center"><a href="update-cart.php?action=rem&id='.$product_id.'" class="btn-remove">remove</a></div>';
+                echo '</div>';
+                echo '</div>';
               }
             }
           }
-          echo '<tr>';
-          echo '<td colspan="3" align="right">Total</td>';
-          echo '<td colspan="3" align="right">Total</td>';
-          echo '<td>'.$total.'</td>';
-          echo '</tr>';
-          echo '<tr>';
-              echo '<td colspan="4" align="right"><a href="update-cart.php?action=empty" class="button alert">Empty Cart</a><a href="featured.php" class="button [secondary success alert]">Continue Shopping</a>';
-              if(isset($_SESSION['username'])) {
-                echo '<a href="orders-update.php"><button style="float:right;">COD</button></a>';
-              }
-              else {
-                echo '<a href="login.php"><button style="float:right;">Login</button></a>';
-              }
-              echo '</td>';
-            echo '</tr>';
-          echo '</table>';
+
+          echo '<div class="subtotal-holder col-md-12" align="center">Sub Total: <span style="font-weight:600;">'.$total.'</span></div>';
+          echo '</div>';
+
+
+
+        echo '</table>';
+
         }
 
         else {
-          echo '<a href="main.php">Continue Shopping Here</a>';
+          echo '<a class="shopping-text" href="main.php">Continue Shopping Here</a>';
         }
 
         echo '</div>';
       echo '</div>';
     echo '</div>';
+
           ?>
+
+
   <!-- Footer -->
   <?php include('assets/footer.html') ?>
   <!-- Scripts  -->

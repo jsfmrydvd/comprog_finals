@@ -57,13 +57,24 @@ if(session_id() == '' || !isset($_SESSION)){session_start();
       </div>
     </nav>
     <!-- about section -->
-    <div class="container">
-      <div class="row">
-        <div class="heading-primary">
-          <h2>About us</h2>
+    <div class="about-content-section">
+      <div class="container">
+        <div class="row">
+          <div class="heading-primary col-md-12 text-center">
+            <h2>ABOUT US</h2>
+            <hr />
+          </div>
+          <div class="text-content col-md-12 text-center">
+            <p>
+              Iteam store is an ecommerce website made with HTML5, PHP, SCSS & JS. Images that was used for this project was taken from www.Pexels.com.
+              We the ITEAM created the website for our COMPROG 2 subject. This website is responsive and has a mobile view.
+            </p>
+          </div>
         </div>
       </div>
     </div>
+
+
     <!-- Footer -->
     <?php include('assets/footer.html') ?>
     <!-- cart modal -->
